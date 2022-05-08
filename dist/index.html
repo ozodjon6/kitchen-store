@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kitchen Store</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="css/main.css" />
   </head>
@@ -49,8 +50,52 @@
           <main class="main-page">
             <section class="section-page slider">
               <div class="container">
-                <div class="slider">
-
+                <div class="slider swiper mySwiper">
+                  <div class="slider__inner swiper-wrapper">
+                    <div class="slider__item swiper-slide">
+                      <div class="col-6">
+                        <div class="slider__item-heading">
+                          <h2 class="title">
+                            Современные кухни на заказ по индивидуальным
+                            размерам
+                          </h2>
+                          <span class="description"
+                            >Мы делаем мебель со смыслом и учетом всех Ваших
+                            самых смелых пожеланий</span
+                          >
+                        </div>
+                        <div class="slider__item-btns">
+                          <a href="#" class="btn">О нас</a>
+                          <a href="#" class="btn">Наши работы</a>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <img src="./images/img/hero-1.png" alt="">
+                      </div>
+                    </div>
+                    <div class="slider__item swiper-slide">
+                      <div class="col-6">
+                        <div class="slider__item-heading">
+                          <h2 class="title">
+                            Test
+                          </h2>
+                          <span class="description"
+                            >Lorem ipsum</span
+                          >
+                        </div>
+                        <div class="slider__item-btns">
+                          <a href="#" class="btn">О нас</a>
+                          <a href="#" class="btn">Наши работы</a>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <img src="./images/img/hero-1.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-pagination"></div>
                 </div>
               </div>
             </section>
@@ -144,6 +189,7 @@
     <div class="overlay"></div>
   </body>
 
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="./js/bootstrap.bundle.min.js"></script>
   <script src="./js/jquery.js"></script>
   <script src="./js/common.js"></script>
