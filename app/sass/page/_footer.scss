@@ -1,0 +1,106 @@
+.footer-page {
+    background: #7F7F7F;
+    padding: 7rem 0 55px;
+    color: #fff;
+}
+
+.footer-page__inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    & a {
+        color: #fff;
+    }
+
+    & .footer-page__col:not(:last-child) {
+        margin-right: 5rem;
+    }
+
+    & .product {
+        & .product__item:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+
+        & .product__item {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+
+    & .footer-page__col-btn {
+        border: 1px solid #FFFFFF;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        text-transform: uppercase;
+        padding: 16px 24px;
+        white-space: nowrap;
+    }
+
+    .footer-page__col {
+        min-height: 30rem;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    & .footer-page__col:nth-child(2) {
+
+        & .footer-page__content:first-child {
+            margin-bottom: 5rem;
+        }
+
+        & .footer-page__content {
+            & p {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
+    }
+
+    & .footer-page__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 5rem;
+
+        & .footer-page__nav-item {
+            white-space: nowrap;
+            margin-right: 5rem;
+        }
+    }
+    & .social {
+        display: flex;
+        align-items: center;
+
+        & .social__item {
+            margin-right: 5rem;
+        }
+    }
+
+    & .contact {
+        & .title {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 34px;
+        }
+        & span {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            margin-bottom: 5rem;
+            display: block;
+        }
+
+        & a {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 29px;
+        }
+    }
+}

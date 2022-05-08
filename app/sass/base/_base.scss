@@ -45,6 +45,7 @@ img {
 
 a {
   transition: all 0.3s;
+  text-decoration: none;
 
   &:hover {
     text-decoration: none;
@@ -89,7 +90,7 @@ body {
 body {
   font-size: 16px;
   font-family: 'Montserrat', sans-serif;
-  background-color: #000000;
+  background-color: #fff;
   color: #fff;
   font-weight: 500;
 }
@@ -98,6 +99,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.wrapper {
+  min-height: 200vh;
 }
 
 .container {
