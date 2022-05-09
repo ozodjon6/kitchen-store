@@ -1,0 +1,156 @@
+.accordion-section {
+    & .title {
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 44px;
+        color: #000000;
+        margin-bottom: 4rem;
+    }
+
+    & .accordion-item {
+        border: 1px solid #EFEFEF;
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+
+        & .accordion-button {
+            color: #000000;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            padding: 24px 20px;
+            // max-width: 546px;
+
+            &::after {
+                width: 3rem;
+                height: 3rem;
+                margin-left: 60px;
+                border-radius: 50%;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+                background-image: url(../images/icons/arrow-white.svg);
+                background-repeat: no-repeat;
+                background-size: 15px;
+                background-position: center center;
+                transform: rotate(0deg);
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                right: 20px;
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50%;
+                background: #A7A7A7;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+            }
+        }
+        & .accordion-button:focus {
+            background-color: transparent;
+            border-color: transparent;
+        }
+        & .accordion-button:not(.collapsed) {
+            background-color: transparent;
+        }
+        & .accordion-button:not(.collapsed)::after {
+            transform: rotate(180deg);
+        }
+        & .accordion-button:not(.collapsed)::before {
+            background: #FBB80D;
+        }
+
+        & .accordion-body {
+            color: #A7A7A7;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24px;
+            padding: 2rem;
+        }
+    }
+}
+.accordion-flush .accordion-item:first-child {
+    border-top: 1px solid #EFEFEF;
+}
+.accordion-flush .accordion-item:last-child {
+    border-bottom: 1px solid #EFEFEF;
+}
+
+// form-wrap 
+.form-wrap {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #EFEFEF;
+    background-color: #fff;
+    box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.05);
+}
+
+.form-wrap__heading {
+    margin-bottom: 3rem;
+    & .title {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px;
+        margin-bottom: 1rem;
+    }
+
+    & .text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #A7A7A7;
+    }
+}
+
+.form-wrap__row {
+    width: 100%;
+    max-width: 448px;
+
+    & .form-wrap__field {
+        background: #F5F5F5;
+        padding: 25px;
+        margin-bottom: 2rem;
+        text-align: center;
+
+        & input {
+            background-color: transparent;
+        }
+    }
+}
+
+.form-wrap__btn {
+    width: 100%;
+    margin-bottom: 2rem;
+    max-width: 448px;
+    & .orange-btn {
+        max-width: 100%;
+    }
+}
+
+.form-wrap__checkboxes {
+    width: 100%;
+    max-width: 448px;
+}
+
+.form-wrap__checkboxes-row {
+    & .form-wrap__checkbox-wrap {
+        display: flex;
+        align-items: center;
+
+        & input {
+            margin-right: 1rem;
+        }
+    }
+    & .form-wrap__checkbox-text {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+
+        & a {
+            color: #FBB80D;
+            text-decoration: underline;
+        }
+    }
+}
