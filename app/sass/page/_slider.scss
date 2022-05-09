@@ -2,12 +2,11 @@
   background-image: url(../images/img/hero.png);
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: contain;
-  height: 500px;
+  background-size: cover;
+  height: 100%;
   width: 100%;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
   z-index: -1;
+  padding: 5rem 0;
 }
 
 .slider.swiper {
