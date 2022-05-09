@@ -90,9 +90,23 @@
 }
 
 .header-page__menu {
-    padding-left: 112px;
+    padding-left: 87px;
     
     & .menu-item {
+        position: relative;
+        padding: 0 25px;
+        transition: all 0.3s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            background: #FFFFFF;
+            height: 1px;
+            width: 100%;
+            bottom: -20px;
+            opacity: 0;
+        }
 
         & .menu-item__link {
             color: #FFFFFF;
@@ -116,7 +130,12 @@
             align-items: center;
         }
     }
-    & .menu-item:not(:last-child) {
-        margin-right: 5rem;
+    .menu-item.active {
+        &::after {
+            opacity: 1;
+        }
     }
+    // & .menu-item:not(:last-child) {
+    //     margin-right: 5rem;
+    // }
 }

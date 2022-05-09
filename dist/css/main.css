@@ -409,7 +409,24 @@ template {
   max-height: 100%
 }
 .header-page__menu {
-  padding-left: 112px
+  padding-left: 87px
+}
+.header-page__menu .menu-item {
+  position: relative;
+  padding: 0 25px;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s
+}
+.header-page__menu .menu-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  background: #fff;
+  height: 1px;
+  width: 100%;
+  bottom: -20px;
+  opacity: 0
 }
 .header-page__menu .menu-item .menu-item__link {
   color: #fff;
@@ -436,8 +453,8 @@ template {
   -ms-flex-align: center;
   align-items: center
 }
-.header-page__menu .menu-item:not(:last-child) {
-  margin-right: 5rem
+.header-page__menu .menu-item.active::after {
+  opacity: 1
 }
 .footer-page {
   background: #7f7f7f;
@@ -596,7 +613,8 @@ template {
   border-color: #fff
 }
 .slider__item-heading {
-  margin-bottom: 5rem
+  margin-bottom: 5rem;
+  color: #fff
 }
 .slider__item-heading .title {
   font-weight: 600;
@@ -684,6 +702,9 @@ template {
   position: relative;
   max-width: 163px;
   width: 100%
+}
+.operation__content .service .service__item:hover {
+  cursor: pointer
 }
 .operation__content .service .service__item:not(:last-child)::after {
   content: "";
@@ -878,8 +899,84 @@ template {
   color: #fbb80d;
   text-decoration: underline
 }
+.section-page.about-hero {
+  margin-top: 5rem;
+  margin-bottom: 0
+}
+.section-page.about-hero .col-md-6:last-child {
+  text-align: right
+}
+.section-page.vide-player {
+  position: relative
+}
+.video {
+  position: relative;
+  width: 100%;
+  height: 40rem;
+  background-color: #000
+}
+.section-page.group-player .video {
+  height: 50rem
+}
+.video__link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%
+}
+.video__media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none
+}
+.video__button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  padding: 0;
+  width: 170px;
+  height: 170px;
+  border: none;
+  background-color: transparent;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  cursor: pointer
+}
+.video__button-shape {
+  fill: #212121;
+  fill-opacity: .8
+}
+.video__button-icon {
+  fill: #fff
+}
+.video__button:focus {
+  outline: 0
+}
+.video:hover .video__button-shape,
+.video__button:focus .video__button-shape {
+  fill: #fff;
+  fill-opacity: 1
+}
+.video--enabled {
+  cursor: pointer
+}
+.video--enabled .video__button {
+  display: block
+}
 .section-page {
   margin-bottom: 10rem
+}
+.section-page:first-child {
+  margin-top: 5rem
+}
+.section-page.slider:first-child {
+  margin-top: 0
 }
 .section-page.info-list {
   margin-top: 5rem;
@@ -986,6 +1083,9 @@ template {
   padding-top: 15px;
   padding-bottom: 15px
 }
+.named-list .named-list__item:hover {
+  cursor: pointer
+}
 .named-list .named-list__item p {
   color: #7e7e7e;
   font-weight: 400;
@@ -999,7 +1099,7 @@ template {
 .named-list .named-list__item.active p {
   color: #000
 }
-.works-view {
+.works-view .works-view__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1008,18 +1108,18 @@ template {
   align-items: center;
   margin-right: -3rem
 }
-.works-view .works-view__item {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 calc((100% - 4*30px)/ 4);
-  flex: 0 0 calc((100% - 4*30px)/ 4);
-  max-width: calc((100% - 4*30px)/ 4);
+.works-view .works-view__inner .works-view__item {
   margin-right: 3rem;
+  margin-bottom: 56px;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
   position: relative
 }
-.works-view .works-view__item:hover {
+.works-view .works-view__inner .works-view__item:hover {
   cursor: pointer
 }
-.works-view .works-view__item .btn {
+.works-view .works-view__inner .works-view__item .btn {
   position: absolute;
   right: 50%;
   margin-right: -104px;
@@ -1043,7 +1143,7 @@ template {
   justify-content: center;
   max-width: 208px
 }
-.works-view__item.active .btn {
+.works-view__item:hover .btn {
   background: #fbb80d;
   color: #000
 }
@@ -1066,7 +1166,8 @@ template {
   margin-right: auto;
   margin-left: auto
 }
-.orange-btn {
+.orange-btn,
+.white-btn {
   background: #fbb80d;
   height: 5rem;
   display: -webkit-box;
@@ -1085,6 +1186,10 @@ template {
   text-transform: uppercase;
   width: 100%;
   max-width: 208px
+}
+.white-btn {
+  border: 1px solid #000;
+  background-color: #fff
 }
 .proffer {
   color: #000
@@ -1111,5 +1216,85 @@ template {
 }
 .proffer .text p:first-child {
   margin-bottom: 3rem
+}
+.feedback__wrapper .white-btn {
+  margin-left: auto
+}
+.feedback__wrapper .swiper-button-next,
+.feedback__wrapper .swiper-button-prev {
+  left: 0;
+  top: 90%;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #dedede;
+  -webkit-box-shadow: 0 4px 4px rgba(0,0,0,.05);
+  box-shadow: 0 4px 4px rgba(0,0,0,.05)
+}
+.feedback__wrapper .swiper-button-next::after,
+.feedback__wrapper .swiper-button-prev::after {
+  font-size: 20px
+}
+.feedback__wrapper .swiper-button-next {
+  margin-left: 7rem
+}
+.feedback__wrapper .swiper-button-next.swiper-button-disabled::after,
+.feedback__wrapper .swiper-button-prev.swiper-button-disabled::after {
+  color: #000
+}
+.feedback__inner {
+  margin-bottom: 5rem
+}
+.swiper {
+  width: 100%;
+  height: 100%
+}
+.feedback-_item {
+  border: 1px solid #e5e5e5;
+  padding: 5rem;
+  min-height: 241px
+}
+.feedback-_item .title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 1rem
+}
+.feedback-_item .description {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px
+}
+.swiper-pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center
+}
+.swiper-pagination .swiper-pagination-bullet {
+  width: 30px;
+  height: 30px;
+  border-radius: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 20px;
+  font-size: 16px;
+  color: #000;
+  opacity: 1;
+  border: 0 none
+}
+.swiper-pagination .swiper-pagination-bullet-active {
+  background: #fbb80d
 }
 /*# sourceMappingURL=app/css/main.css.map */

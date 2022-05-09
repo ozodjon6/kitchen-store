@@ -1,5 +1,14 @@
 .section-page {
     margin-bottom: 10rem;
+
+    &:first-child {
+        margin-top: 5rem;
+    }
+}
+.section-page.slider {
+    &:first-child {
+        margin-top: 0;
+    }
 }
 .section-page.info-list {
     margin-top: 5rem;
@@ -101,6 +110,10 @@
         padding-top: 15px;
         padding-bottom: 15px;
 
+        &:hover {
+            cursor: pointer;
+        }
+
         & p {
             color: #7E7E7E;
             font-weight: 400;
@@ -120,40 +133,48 @@
 }
 
 .works-view {
-    display: flex;
-    align-items: center;
-    margin-right: -3rem;
-    & .works-view__item {
-        flex: 0 0 calc((100% - 4*30px) / 4);
-        max-width: calc((100% - 4*30px) / 4);
-        margin-right: 3rem;
-        position: relative;
+    
+    & .works-view__inner {
+        display: flex;
+        align-items: center;
+        margin-right: -3rem;
+        // margin-bottom: -56px;
+        // flex-wrap: wrap;
+        
+        & .works-view__item {
+            // flex: 0 0 calc((100% - 4*30px) / 4);
+            // max-width: calc((100% - 4*30px) / 4);
+            margin-right: 3rem;
+            margin-bottom: 56px;
+            transition: all 0.3s;
+            position: relative;
 
-        &:hover {
-            cursor: pointer;
-        }
+            &:hover {
+                cursor: pointer;
+            }
 
-        & .btn {
-            position: absolute;
-            right: 50%;
-            margin-right: -104px;
-            bottom: -25px;
-            background: #A7A7A7;
-            color: #FFFFFF;
-            font-weight: 600;
-            font-size: 14px;
-            line-height: 17px;
-            height: 5rem;
-            width: 100%;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            max-width: 208px;
+            & .btn {
+                position: absolute;
+                right: 50%;
+                margin-right: -104px;
+                bottom: -25px;
+                background: #A7A7A7;
+                color: #FFFFFF;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 17px;
+                height: 5rem;
+                width: 100%;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                max-width: 208px;
+            }
         }
     }
 }
-.works-view__item.active {
+.works-view__item:hover {
     & .btn {
         background: #FBB80D;
         color: #000000;
@@ -177,7 +198,8 @@
 }
 
 // btn
-.orange-btn {
+.orange-btn,
+.white-btn {
     background: #FBB80D;
     height: 5rem;
     display: flex;
@@ -190,6 +212,10 @@
     text-transform: uppercase;
     width: 100%;
     max-width: 208px;
+}
+.white-btn {
+    border: 1px solid #000000;
+    background-color: #fff;
 }
 
 // proffer 
@@ -222,3 +248,86 @@
         }
     }
 }
+
+// feedback
+.feedback__wrapper {
+    & .white-btn {
+        margin-left: auto;
+    }
+
+    & .swiper-button-next,
+    & .swiper-button-prev {
+        left: 0;
+        top: 90%;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        background: #FFFFFF;
+        border: 1px solid #DEDEDE;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+
+        &::after {
+            font-size: 20px;
+        }
+    }
+    & .swiper-button-next {
+        margin-left: 7rem;
+    }
+    .swiper-button-prev.swiper-button-disabled,
+    .swiper-button-next.swiper-button-disabled{
+        &::after {
+            color: #000000;
+        }
+    }
+}
+.feedback__inner {
+    margin-bottom: 5rem;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.feedback-_item {
+    border: 1px solid #E5E5E5;
+    padding: 5rem;
+    min-height: 241px;
+
+    & .title {
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        margin-bottom: 1rem;
+    }
+
+    & .description {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+    }
+}
+
+.swiper-pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+    width: 30px;
+    height: 30px;
+    border-radius: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 20px;
+    font-size: 16px;
+    color: #000;
+    opacity: 1;
+    border: 0 none;
+  }
+
+  .swiper-pagination .swiper-pagination-bullet-active {
+    background: #FBB80D;
+  }
