@@ -1119,6 +1119,10 @@ template {
 .works-view .works-view__inner .works-view__item:hover {
   cursor: pointer
 }
+.works-view .works-view__inner .works-view__item:hover .btn {
+  background: #fbb80d;
+  color: #000
+}
 .works-view .works-view__inner .works-view__item .btn {
   position: absolute;
   right: 50%;
@@ -1142,10 +1146,6 @@ template {
   -ms-flex-pack: center;
   justify-content: center;
   max-width: 208px
-}
-.works-view__item:hover .btn {
-  background: #fbb80d;
-  color: #000
 }
 .furniture .all-work-btn {
   color: #000;
@@ -1296,5 +1296,143 @@ template {
 }
 .swiper-pagination .swiper-pagination-bullet-active {
   background: #fbb80d
+}
+.post-view .post-view__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+  grid-template-columns: repeat(6,1fr);
+  gap: 30px;
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 3rem
+}
+@media (max-width:1199px) {
+  .post-view .post-view__grid {
+    -ms-grid-columns: (1fr)[4];
+    grid-template-columns: repeat(4,1fr)
+  }
+}
+@media (max-width:991px) {
+  .post-view .post-view__grid {
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3,1fr)
+  }
+}
+@media (max-width:767px) {
+  .post-view .post-view__grid {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2,1fr)
+  }
+}
+.post-view .col {
+  height: 208px;
+  background: #c4c4c4
+}
+.post-view .row p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  margin-bottom: 2rem
+}
+.call-support {
+  height: 100%;
+  width: 100%;
+  max-width: 477px;
+  background-image: url(../images/img/new-product.png);
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  color: #fff
+}
+.call-support .call-support__content:first-child {
+  margin-bottom: 3rem
+}
+.call-support .call-support__content .title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  margin-bottom: 1rem
+}
+.call-support .call-support__content .text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px
+}
+.call-support .call-support__content .white-btn {
+  background-color: transparent;
+  margin-bottom: 1rem;
+  border: 1px solid #fff;
+  color: #fff;
+  padding-right: 20px;
+  padding-left: 20px
+}
+.call-support .call-support__content .btn {
+  min-width: 208px
+}
+.section-page .post .post__item {
+  margin-bottom: 3rem
+}
+.section-page .post .post__item strong {
+  margin-bottom: 2rem;
+  display: block
+}
+.section-page .post .post__item p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px
+}
+.table-wrapper {
+  border: 1px solid #dedede;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-right: 0;
+  padding-left: 0
+}
+.table-page__heading {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 26px;
+  margin-bottom: 2rem;
+  text-align: center
+}
+.table-page {
+  width: 100%;
+  margin-bottom: 3rem
+}
+.table-page thead tr {
+  background: #fafafa
+}
+.table-page thead tr td {
+  padding: 12px
+}
+.table-page tbody tr td {
+  padding-top: 20px
+}
+.table-page tbody tr td:first-child {
+  padding-left: 3rem
+}
+.table-page tbody tr td:last-child {
+  padding-right: 3rem
+}
+.table-page tbody td,
+.table-page thead td {
+  color: #767676;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  line-height: 26px
 }
 /*# sourceMappingURL=app/css/main.css.map */
