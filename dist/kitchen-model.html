@@ -40,12 +40,12 @@
                     <a href="#" class="menu-item__link">Модели кухонь</a>
                   </li>
                   <li class="menu-item">
-                    <a href="#" class="menu-item__link">Отзывы</a>
+                    <a href="./comment.html" class="menu-item__link">Отзывы</a>
                   </li>
                   <li class="menu-item">
-                    <a href="#" class="menu-item__link">Контакты</a>
+                    <a href="./contact.html" class="menu-item__link">Контакты</a>
                   </li>
-                  <li class="menu-item">
+                  <li class="menu-item menu-item-open">
                     <a href="#" class="menu-item__link btn">Оставить заявку</a>
                   </li>
                 </ul>
@@ -317,7 +317,41 @@
         </footer>
       </div>
     </div>
-    <div class="overlay"></div>
+     <div class="nav-overlay"></div>
+
+    <div class="popup-page">
+      <div class="popup-page__inner">
+        <form action="#" class="form-wrap">
+          <div class="form-wrap__heading">
+            <div class="title">Оставить заявку</div>
+            <span class="text">Оставьте свои контакты, мы Вам перезвоним</span>
+          </div>
+          <div class="form-wrap__row">
+            <div class="form-wrap__field">
+              <input type="text" required placeholder="Введите Ваши имя" />
+            </div>
+            <div class="form-wrap__field">
+              <input type="email" required placeholder="Введите Ваш номер" />
+            </div>
+          </div>
+          <div class="form-wrap__btn">
+            <button class="orange-btn" type="submit">Отправить</button>
+          </div>
+          <div class="form-wrap__checkboxes">
+            <div class="form-wrap__checkboxes-row">
+              <label class="form-wrap__checkbox-wrap">
+                <input type="radio" name="theme" value="Taklif" />
+                <span class="form-wrap__checkbox-mask"></span>
+                <span class="form-wrap__checkbox-text">я принимаю условия <a href="#">политика конфиденциальности</a></span>
+              </label>
+            </div>
+          </div>
+        </form>
+        <div class="popu-page__close" id="close-btn">
+          <img src="../images/icons/close.svg" alt="">
+        </div>
+      </div>
+    </div>
   </body>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

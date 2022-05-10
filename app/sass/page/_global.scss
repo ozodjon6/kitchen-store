@@ -414,7 +414,34 @@
   }
 }
 
-// post 
+// contact-page
+
+.call-support.call-support_contact {
+  background-image: url(../images/img/for-contact.png);
+  padding-top: 4rem;
+
+  & .title {
+    margin-bottom: 2rem;
+  }
+
+  & .text {
+    max-width: 297px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    p {
+      font-size: 18px;
+      margin-bottom: 3rem;
+      line-height: 28px;
+
+      & span {
+        color: #FBB80D;
+      }
+    }
+  }
+}
+
+// post
 
 .section-page {
   & .post {
@@ -435,9 +462,9 @@
   }
 }
 
-// table-page 
+// table-page
 .table-wrapper {
-  border: 1px solid #DEDEDE;
+  border: 1px solid #dedede;
   padding-top: 3rem;
   padding-bottom: 3rem;
   padding-right: 0;
@@ -457,7 +484,7 @@
 
   & thead {
     tr {
-      background: #FAFAFA;
+      background: #fafafa;
 
       & td {
         padding: 12px;
@@ -477,14 +504,94 @@
       }
     }
   }
-    & thead,
-    & tbody {
-      td {
-        color: #767676;
-        font-weight: 400;
-        font-size: 16px;
-        text-align: center;
-        line-height: 26px;
+  & thead,
+  & tbody {
+    td {
+      color: #767676;
+      font-weight: 400;
+      font-size: 16px;
+      text-align: center;
+      line-height: 26px;
+    }
+  }
+}
+
+// comment-post
+
+.comment-post {
+  & .global-heading {
+    display: flex;
+    justify-content: space-between;
+
+    & .global-heading__item {
+      & .title {
+        text-align: left;
       }
     }
+  }
+
+  & .feedback__wrapper {
+    & .white-btn {
+      margin-right: auto;
+    }
+  }
+
+  & .feedback-_item {
+    min-height: 217px;
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+
+    & h4 {
+      span {
+        color: #818181;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        margin-left: 3rem;
+      }
+    }
+  }
+}
+
+/// popup-page 
+
+.popup-page {
+  max-width: 506px;
+  margin: 0 auto;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+  transition: all 0.5s ease-in-out;
+  z-index: -1;
+  opacity: 0;
+
+  &.open {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    z-index: 9999;
+  }
+
+  & .form-wrap {
+    padding: 5rem 3rem;
+  }
+
+  & .popu-page__close {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 4rem;
+    height: 4rem;
+    background: #000000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
