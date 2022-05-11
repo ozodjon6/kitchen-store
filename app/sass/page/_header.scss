@@ -108,6 +108,10 @@
             opacity: 0;
         }
 
+        &:hover .menu-item__link {
+            color: #FBB80D;
+        }
+
         & .menu-item__link {
             color: #FFFFFF;
             font-weight: 400;
@@ -128,6 +132,12 @@
             white-space: nowrap;
             display: flex;
             align-items: center;
+            transition: all 0.3s;
+
+            &:hover {
+                background: #000000;
+                color: #FFFFFF;
+            }
         }
     }
     .menu-item.active {

@@ -211,6 +211,13 @@
   text-transform: uppercase;
   width: 100%;
   max-width: 208px;
+  transition: all 0.3s;
+}
+.orange-btn {
+  &:hover {
+    background: #000000;
+    color: #FFFFFF;
+  }
 }
 .white-btn {
   border: 1px solid #000000;

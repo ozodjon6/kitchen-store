@@ -97,7 +97,7 @@ function buildcopy() {
 		'{app/js,app/css}/*.*',
 		'app/images/**/*.*',
 		'!app/images/dist/**/*',
-		'app/font/**/*',
+		'app/fonts/**/*',
 		'app/video/**/*',
 		'app/landing/**/*'
 		// 'app/templates/pages/*.pug'
