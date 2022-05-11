@@ -257,6 +257,14 @@
     justify-content: space-between;
     & .contacts__checkbox-wrap {
         margin-right: 4rem;
+        & .contacts__checkbox-mask {
+            transition: all 0.3s;
+            &:hover {
+                background: #7F7F7F;
+                color: #FFFFFF;
+            }
+        }
+        
     }
     & .contacts__checkbox-mask {
         border: 1px solid #000000;
