@@ -1,6 +1,10 @@
 .section-page {
   margin-bottom: 10rem;
 
+  @include respond(mobilemini) {
+   margin-bottom: 3rem; 
+  }
+
   &:first-child {
     margin-top: 5rem;
   }
@@ -13,12 +17,23 @@
 .section-page.info-list {
   margin-top: 5rem;
   margin-bottom: 10rem;
+
+  @include respond(tabdesk) {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
 }
 
 // Info-list
 
 .info-list {
   display: flex;
+
+  @include respond(desktop) {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .info-list__item {
@@ -26,6 +41,19 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-bottom: -3rem;
+
+  @include respond(desktop) {
+      flex: 0 0 calc((100% - 2*30px) / 2);
+      max-width: calc((100% - 2*30px) / 2);
+      margin-bottom: 3rem;
+  }
+
+  @include respond(phone) {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-bottom: 3rem;
+  }
 
   & .content {
     color: #000000;
@@ -157,6 +185,11 @@
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 1rem;
+
+    @include respond(phone) {
+      font-size: 24px;
+      line-height: 29px;
+    }
   }
   & .text {
     font-weight: 400;
@@ -167,12 +200,25 @@
     display: block;
     margin: 0 auto;
   }
+
+  & .global-heading__item {
+    @include respond(tabdesk) {
+      margin-right: 3rem;
+    }
+    & .text {
+      text-align: left;
+    }
+  }
 }
 
 // Furniture -list
 
 .furniture__content:first-child {
   margin-bottom: 2rem;
+
+  @include respond(phone) {
+    overflow-x: scroll;
+  }
 }
 
 .works-title {
@@ -182,6 +228,11 @@
   margin-left: auto;
   display: flex;
   justify-content: space-between;
+
+  @include respond(phone) {
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
 
   & span {
     font-weight: 400;
@@ -193,6 +244,10 @@
     &:hover {
       text-shadow: 0 0 1px #000;
       cursor: pointer;
+    }
+
+    @include respond(phone) {
+      margin-right: 2rem;
     }
   }
 }
@@ -206,6 +261,10 @@
   max-width: 1222px;
   margin-right: auto;
   margin-left: auto;
+
+  @include respond(phone) {
+    width: 999px;
+  }
 
   & .named-list__item {
     width: 15rem;
@@ -264,12 +323,21 @@
     display: flex;
     align-items: center;
     margin-right: -3rem;
-    // margin-bottom: -56px;
-    // flex-wrap: wrap;
+    
+    @include respond(desktop) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    @include respond(mobilemini) {
+      justify-content: center;
+      margin-bottom: -45px;
+      margin-right: 0;
+    }
 
     & .works-view__item {
-      // flex: 0 0 calc((100% - 4*30px) / 4);
-      // max-width: calc((100% - 4*30px) / 4);
+      flex: 0 0 calc((100% - 4*30px) / 4);
+      max-width: calc((100% - 4*30px) / 4);
       margin-right: 3rem;
       margin-bottom: 56px;
       transition: all 0.3s;
@@ -303,6 +371,21 @@
         align-items: center;
         justify-content: center;
         max-width: 208px;
+      }
+
+      @include respond(desktop) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 calc((100% - 2*30px) / 2);
+        max-width: calc((100% - 2*30px) / 2);
+      }
+
+      @include respond(mobilemini) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 45px;
       }
     }
   }
@@ -362,6 +445,10 @@
 .proffer {
   color: #000000;
 
+  @include respond(tabdesk) {
+    text-align: center;
+  }
+
   & .heading {
     color: #fbb80d;
     font-weight: 400;
@@ -375,6 +462,12 @@
     font-size: 36px;
     line-height: 44px;
     margin-bottom: 3rem;
+
+    @include respond(tabdesk) {
+      font-size: 24px;
+      line-height: 29px;
+      margin-bottom: 1rem;
+    }
   }
 
   & .text {
@@ -384,8 +477,22 @@
       font-weight: 400;
       &:first-child {
         margin-bottom: 3rem;
+
+        @include respond(tabdesk) {
+          margin-bottom: 1rem;
+        }
       }
     }
+
+    @include respond(tabdesk) {
+      font-size: 14px;
+      line-height: 24px;
+    }
+  }
+
+  & .orange-btn {
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
@@ -393,6 +500,11 @@
 .feedback__wrapper {
   & .white-btn {
     margin-left: auto;
+    
+    @include respond(mobilemini) {
+      margin-right: auto;
+      margin-top: 10rem;
+    }
   }
 
   & .swiper-button-next,
@@ -409,9 +521,19 @@
     &::after {
       font-size: 20px;
     }
+
+    @include respond(mobilemini) {
+      top: 75%;
+      left: 50%;
+      margin-left: -75px;
+    }
   }
   & .swiper-button-next {
     margin-left: 7rem;
+
+    @include respond(mobilemini) {
+      margin-left: 0;
+    }
   }
   .swiper-button-prev.swiper-button-disabled,
   .swiper-button-next.swiper-button-disabled {
@@ -422,6 +544,10 @@
 }
 .feedback__inner {
   margin-bottom: 5rem;
+
+  @include respond(tabdesk) {
+    margin-bottom: 2rem;
+  }
 }
 
 .swiper {
@@ -435,6 +561,11 @@
   min-height: 241px;
   transition: all 0.3s;
 
+  @include respond(tabdesk) {
+    padding: 2rem;
+    text-align: center;
+  }
+
   &:hover {
     border-color: #FBB80D;
     cursor: pointer;
@@ -445,12 +576,21 @@
     font-size: 24px;
     line-height: 29px;
     margin-bottom: 1rem;
+
+    @include respond(tabdesk) {
+      font-size: 16px;
+      line-height: 20px;
+    }
   }
 
   & .description {
     font-weight: 400;
     font-size: 14px;
     line-height: 24px;
+
+    @include respond(tabdesk) {
+      font-size: 12px;
+    }
   }
 }
 
@@ -595,6 +735,10 @@
   background-image: url(../images/img/for-contact.png);
   padding-top: 4rem;
 
+  @include respond(mobilemini) {
+    background-position: center;
+  }
+
   & .title {
     margin-bottom: 2rem;
   }
@@ -706,9 +850,29 @@
     display: flex;
     justify-content: space-between;
 
+    @include respond(tabdesk) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     & .global-heading__item {
       & .title {
         text-align: left;
+
+        @include respond(tabdesk) {
+          text-align: center;
+        }
+      }
+
+      & .text {
+        @include respond(tabdesk) {
+          text-align: center;
+        }
+      }
+
+      @include respond(tabdesk) {
+        margin-right: 0;
+        margin-bottom: 3rem;
       }
     }
   }

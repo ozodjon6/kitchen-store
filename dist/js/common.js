@@ -19,7 +19,7 @@ let swiper = new Swiper(".mySwiper", {
 
 // Feedback slider
 let swiperFeedback = new Swiper(".feedback__wrapper", {
-  slidesPerView: 2,
+  slidesPerView: 1,
   spaceBetween: 30,
   autplay: false,
   cssMode: false,
@@ -28,6 +28,11 @@ let swiperFeedback = new Swiper(".feedback__wrapper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  breakpoints: {
+    991: {
+      slidesPerView: 2
+    }
+  }
 });
 
 let swiperWorks = new Swiper(".works-view", {
@@ -103,35 +108,41 @@ findVideos();
 
 // add class remove class
 
-let namedListItem = document.querySelectorAll(".named-list__item");
-let serviceItem = document.querySelectorAll(".service__item");
+(function () {
+  // let namedListItem = document.querySelectorAll(".named-list__item");
+  let serviceItem = document.querySelectorAll(".service__item");
 
-namedListItem.forEach(function (item) {
-  item.addEventListener("click", function () {
-    namedListItem.forEach(function (item) {
-      item.classList.remove("active");
-    });
-    item.classList.add("active");
-  });
-});
+  // namedListItem.forEach(function (item) {
+  //   item.addEventListener("click", function () {
+  //     namedListItem.forEach(function (item) {
+  //       item.classList.remove("active");
+  //     });
+  //     item.classList.add("active");
+  //   });
+  // });
 
-serviceItem.forEach(function (item) {
-  item.addEventListener("click", function () {
-    serviceItem.forEach(function (item) {
-      item.classList.remove("active");
+  serviceItem.forEach(function (item) {
+    item.addEventListener("click", function () {
+      serviceItem.forEach(function (item) {
+        item.classList.remove("active");
+      });
+      item.classList.add("active");
     });
-    item.classList.add("active");
   });
-});
+  
+})();
 
 (function () {
-
-  const closeBtn = document.querySelector('#close-btn');
-  const menuItemOpen = document.querySelectorAll('.menu-item-open');
-  const popupPage = document.querySelector('.popup-page');
+  const closeBtn = document.querySelector("#close-btn");
+  const menuItemOpen = document.querySelectorAll(".menu-item-open");
+  const popupPage = document.querySelector(".popup-page");
   const navOverlay = document.querySelector(".nav-overlay");
+  const headerPageHamburger = document.querySelector(".header-page__hamburger");
+  const headerPageHamburgerActive = document.querySelector(".header-page__hamburger .active");
+  const mobileDevice = document.querySelector(".mobile-device");
+  const headerPage = document.querySelector(".header-page");
 
-  for(let i = 0; i < menuItemOpen.length; i++) {
+  for (let i = 0; i < menuItemOpen.length; i++) {
     menuItemOpen[i].onclick = function () {
       popupPage.classList.add("open");
       navOverlay.style = "display: block";
@@ -141,6 +152,8 @@ serviceItem.forEach(function (item) {
   navOverlay.onclick = function () {
     popupPage.classList.remove("open");
     navOverlay.style = "display: none";
+    mobileDevice.classList.remove("active");
+    headerPageHamburger.classList.remove("active");
   };
 
   closeBtn.onclick = function () {
@@ -148,4 +161,51 @@ serviceItem.forEach(function (item) {
     navOverlay.style = "display: none";
   };
 
+  headerPageHamburger.addEventListener("click", function() {
+    document.body.style.overflowY = "hidden";
+    document.body.style.height = "100%";
+    this.classList.toggle("active");
+    mobileDevice.classList.toggle("active");
+    navOverlay.style = "display: none";
+    headerPage.style = "background: #fff; z-index: 30;";
+
+    if(this.classList.contains("active")) {
+      navOverlay.style = "display: block";
+    }
+  });
+
 })();
+
+(function () {
+
+  const elem = document.querySelector('.works-view__inner');
+  const iso = new Isotope( elem, {
+
+itemSelector: '.works-view__item',
+filter: ".kitchen"
+});
+
+  const controlls = document.querySelectorAll(".named-list__item");
+  const activeClass = "active";
+
+  controlls.forEach(function(control) {
+      
+      control.addEventListener("click", function(e) {
+          e.preventDefault();
+
+          const filterName = control.getAttribute("data-filter");
+
+          controlls.forEach(function(link) {
+              link.closest(".named-list__item").classList.remove(activeClass);
+          })
+
+          control.closest(".named-list__item").classList.add(activeClass);
+
+          iso.arrange({
+              filter: `.${filterName}`
+          })
+      });
+      
+  });
+
+}());

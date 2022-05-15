@@ -5,6 +5,13 @@
         line-height: 44px;
         color: #000000;
         margin-bottom: 4rem;
+
+        @include respond(phone) {
+            font-size: 24px;
+            line-height: 29px;
+            text-align: center;
+            margin-bottom: 26px;
+        }
     }
 
     & .accordion-item {
@@ -12,6 +19,10 @@
 
         &:not(:last-child) {
             margin-bottom: 2rem;
+
+            @include respond(mobilemini) {
+              margin-bottom: 25px;
+            }
         }
 
         & .accordion-button {
@@ -21,6 +32,10 @@
             line-height: 26px;
             padding: 24px 20px;
             // max-width: 546px;
+
+            @include respond(mobilemini) {
+              padding: 2rem;
+            }
 
             &::after {
                 width: 3rem;
@@ -33,6 +48,14 @@
                 background-size: 15px;
                 background-position: center center;
                 transform: rotate(0deg);
+
+                @include respond(mobilemini) {
+                    content: "";
+                    position: absolute;
+                    bottom: -15px;
+                    left: 50%;
+                    margin-left: 0;
+                  }
             }
             &::before {
                 content: "";
@@ -43,6 +66,11 @@
                 border-radius: 50%;
                 background: #A7A7A7;
                 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+
+                @include respond(mobilemini) {
+                    bottom: -15px;
+                    left: 50%;
+                  }
             }
         }
         & .accordion-button:focus {
@@ -177,8 +205,35 @@
     align-items: center;
     justify-content: space-between;
 
+    @include respond(desktop) {
+      margin-bottom: -2rem;
+      margin-right: -2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @include respond(phone) {
+      margin-right: 0;
+    }
+
     & .contact-type__item {
         display: flex;
+        flex: 0 0 calc((100% - 4*30px) / 4);
+        max-width: calc((100% - 4*30px) / 4);
+
+        @include respond(desktop) {
+            flex: 0 0 calc((100% - 2*30px) / 2);
+            max-width: calc((100% - 2*30px) / 2);
+            margin-bottom: 2rem;
+            margin-right: 2rem;
+            justify-content: center;
+        }
+
+        @include respond(phone) {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-right: 0;
+        }
         & img {
             margin-right: 3rem;
         }
@@ -202,6 +257,10 @@
     font-size: 24px;
     line-height: 29px;
     margin-bottom: 3rem;
+
+    @include respond(mobilemini) {
+      text-align: center;
+    }
 }
 
 .contact-form__wrapper:not(:last-child) {
@@ -237,6 +296,11 @@
 
 .contact-form__field.max-width {
     max-width: 208px;
+
+    @include respond(mobilemini) {
+      margin-right: auto;
+      margin-left: auto;
+    }
 }
 
 .contacts__checkbox-wrap input {
@@ -247,6 +311,10 @@
     font-size: 16px;
     line-height: 20px;
     margin-bottom: 3rem;
+
+    @include respond(mobilemini) {
+      text-align: center;
+    }
 }
 .contacts__checkboxes-row {
     display: flex;
@@ -255,8 +323,18 @@
     margin-bottom: -2rem;
     margin-right: -4rem;
     // justify-content: space-between;
+
+    @include respond(mobilemini) {
+      flex-direction: column;
+      text-align: center;
+      margin-right: 0;
+    }
     & .contacts__checkbox-wrap {
         margin-right: 4rem;
+        
+        @include respond(mobilemini) {
+          margin-right: 0;
+        }
         & .contacts__checkbox-mask {
             transition: all 0.3s;
             &:hover {
@@ -294,15 +372,49 @@
     align-items: center;
     max-width: 100%;
 
+    @include respond(mobilemini) {
+      flex-direction: column;
+    }
+
     & .form-wrap__field {
         margin-bottom: 0;
         padding: 15px 25px;
         height: 5rem;
         margin-right: 3rem;
         min-width: 208px;
+
+        @include respond(mobilemini) {
+          margin-right: 0;
+          margin-bottom: 2rem;
+          width: 100%;
+        }
     }
 
     & .form-wrap__btn {
         margin-bottom: 0rem;
+        
+        @include respond(mobilemini) {
+          max-width: 100%;
+        }
+    }
+}
+
+.section-page.contact-map {
+    display: flex;
+
+    & .container {
+        @include respond(desktop) {
+          margin-top: 3rem;
+        }
+    }
+
+    @include respond(desktop) {
+      flex-direction: column-reverse;
+
+      & .site-map {
+          & .ymaps {
+              width: 100%;
+          }
+      }
     }
 }

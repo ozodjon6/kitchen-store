@@ -47,6 +47,52 @@
       <a href="#" class="menu-item__link btn">Оставить заявку</a>
     </li>
   </ul>
+  <div class="mobile-device">
+    <ul class="mobile-menu">
+      <li class="mobile-menu__item">
+        <a href="./comment.html" class="menu-item__link">О нас</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="./comment.html" class="menu-item__link">Наши работы</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="./comment.html" class="menu-item__link">Принцип работы</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="./comment.html" class="menu-item__link">Модели кухонь</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="./comment.html" class="menu-item__link">Отзывы</a>
+      </li>
+      <li class="mobile-menu__item">
+        <a href="./comment.html" class="menu-item__link">Контакты</a>
+      </li>
+    </ul>
+    <div class="mobile-device__content">
+      <a href="#" class="white-btn">Рассказать нам идею</a>
+      <ul class="social d-flex">
+        <li class="social__item">
+          <a href="#" class="social__icon">
+            <img src="./images/icons/youtube-mobile.png" alt="">
+          </a>
+        </li>
+        <li class="social__item">
+          <a href="#" class="social__icon">
+            <img src="./images/icons/wk-mobile.png" alt="">
+          </a>
+        </li>
+      </ul>
+      <a href="tel:+7 (927) 857-13-26" class="number">+7 (927) 857-13-26</a>
+      <a href="#" class="orange-btn">Оставить заявку</a>
+    </div>
+  </div>
+  <div class="header-page__hamburger">
+    <div class="icon-hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
 </div>
             </div>
           </header>
@@ -56,7 +102,7 @@
                 <div class="slider swiper mySwiper">
                   <div class="slider__inner swiper-wrapper">
                     <div class="slider__item swiper-slide">
-                      <div class="col-6">
+                      <div class="col-12 col-lg-6">
                         <div class="slider__item-heading">
                           <h2 class="title">
                             Современные кухни <span>на заказ по индивидуальным
@@ -72,12 +118,12 @@
                           <a href="#" class="btn">Наши работы</a>
                         </div>
                       </div>
-                      <div class="col-6">
+                      <div class="col-12 col-lg-6">
                         <img src="./images/img/hero-1.png" alt="" />
                       </div>
                     </div>
                     <div class="slider__item swiper-slide">
-                      <div class="col-6">
+                      <div class="col-12 col-lg-6">
                         <div class="slider__item-heading">
                           <h2 class="title">Test</h2>
                           <span class="description">Lorem ipsum</span>
@@ -87,7 +133,7 @@
                           <a href="#" class="btn">Наши работы</a>
                         </div>
                       </div>
-                      <div class="col-6">
+                      <div class="col-12 col-lg-6">
                         <img src="./images/img/hero-1.png" alt="" />
                       </div>
                     </div>
@@ -146,31 +192,31 @@
 <div class="furniture">
     <div class="furniture__content">
         <ul class="named-list">
-            <li class="named-list__item">
+            <li class="named-list__item active" data-filter="kitchen">
                 <img src="./images/icons/kitchen.png" alt="">
                 <p>Кухни</p>
             </li>
-            <li class="named-list__item">
+            <li class="named-list__item" data-filter="closet">
                 <img class="no-hover" src="./images/icons/closet.png" alt="">
                 <img class="img-hover" src="./images/icons/closet-hover.png" alt="">
                 <p>Шкафы</p>
             </li>
-            <li class="named-list__item">
+            <li class="named-list__item" data-filter="dressing">
                 <img class="no-hover" src="./images/icons/dressing.png" alt="">
                 <img class="img-hover" src="./images/icons/dressing-hover.png" alt="">
                 <p>Гардеробные</p>
             </li>
-            <li class="named-list__item">
+            <li class="named-list__item" data-filter="babyroom">
                 <img class="no-hover" src="./images/icons/baby.png" alt="">
                 <img class="img-hover" src="./images/icons/baby-hover.png" alt="">
                 <p>Детские</p>
             </li>
-            <li class="named-list__item">
+            <li class="named-list__item" data-filter="bathroom">
                 <img class="no-hover" src="./images/icons/bathroom.png" alt="">
                 <img class="img-hover" src="./images/icons/bathroom-hover.png" alt="">
                 <p>Мебель в санузел</p>
             </li>
-            <li class="named-list__item">
+            <li class="named-list__item" data-filter="livingroom">
                 <img class="no-hover" src="./images/icons/living.png" alt="">
                 <img class="img-hover" src="./images/icons/living-hover.png" alt="">
                 <p>Гостиные</p>
@@ -190,19 +236,35 @@
         </div>
         <ul class="works-view">
             <div class="works-view__inner">
-                <li class="works-view__item active">
+                <li class="works-view__item bathroom kitchen">
                     <img src="./images/img/work-1.jpg" alt="">
                     <a href="#" class="btn">Подробнее</a>
                 </li>
-                <li class="works-view__item">
+                <li class="works-view__item kitchen livingroom">
                     <img src="./images/img/work-2.jpg" alt="">
                     <a href="#" class="btn">Подробнее</a>
                 </li>
-                <li class="works-view__item">
+                <li class="works-view__item bathroom closet">
                     <img src="./images/img/work-3.jpg" alt="">
                     <a href="#" class="btn">Подробнее</a>
                 </li>
-                <li class="works-view__item">
+                <li class="works-view__item kitchen livingroom">
+                    <img src="./images/img/work-4.jpg" alt="">
+                    <a href="#" class="btn">Подробнее</a>
+                </li>
+                <li class="works-view__item closet">
+                    <img src="./images/img/work-6.jpg" alt="">
+                    <a href="#" class="btn">Подробнее</a>
+                </li>
+                <li class="works-view__item kitchen babyroom">
+                    <img src="./images/img/work-5.jpg" alt="">
+                    <a href="#" class="btn">Подробнее</a>
+                </li>
+                <li class="works-view__item dressing">
+                    <img src="./images/img/work-3.jpg" alt="">
+                    <a href="#" class="btn">Подробнее</a>
+                </li>
+                <li class="works-view__item dressing">
                     <img src="./images/img/work-4.jpg" alt="">
                     <a href="#" class="btn">Подробнее</a>
                 </li>
@@ -273,10 +335,11 @@
             <section class="section-page group-player">
               <div class="container">
                 <div class="row d-flex align-center">
-                  <div class="col-md-6 pe-5">
+                  <div class="col-12 col-lg-6 pe-lg-5 mb-4 mb-lg-0">
                     <div class="video">
                       <a class="video__link" href="https://youtu.be/0hMmKVmNnHI" target="_blank">
                           <picture>
+                              <source srcset="./images/img/mobile-player.jpg" type="image/jpg" media="(max-width: 767px)">
                               <source srcset="./images/img/group-img.webp" type="image/webp">
                               <img class="video__media" src="./images/img/group-img.jpg" alt="Player">
                           </picture>
@@ -310,7 +373,7 @@
                       </button>
                   </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-12 col-lg-6">
                     <div class="proffer">
                       <div class="heading">О нас</div>
                       <h3 class="title">Мы предлагаем лучшую кухню для вас!</h3>
@@ -370,7 +433,7 @@
             <section class="section-page">
               <div class="container">
                 <div class="row">
-    <div class="col-md-6 accordion-section pe-4">
+    <div class="col-12 col-xl-6 accordion-section mb-5 mb-xl-0 pe-xl-4">
         <h3 class="title">Ответы на частые вопросы</h3>
         <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
@@ -407,7 +470,7 @@
             </div>
           </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-12 col-xl-6">
       <form action="#" class="form-wrap">
         <div class="form-wrap__heading">
           <div class="title">Есть дополнительные вопросы ?</div>
@@ -443,7 +506,7 @@
         <footer class="footer-page">
           <div class="container">
             <div class="footer-page__inner">
-  <div class="footer-page__col">
+  <div class="col-12 col-xl-2 footer-page__col">
     <ul class="product">
       <li class="product__item">
         <a href="#" class="product__link">Кухни</a>
@@ -466,7 +529,7 @@
     </ul>
     <a href="#" class="footer-page__col-btn">Рассказать нам идею</a>
   </div>
-  <div class="footer-page__col">
+  <div class="col-12 col-xl-8 footer-page__col">
     <div class="footer-page__content">
       <ul class="footer-page__nav">
         <li class="footer-page__nav-item">
@@ -508,7 +571,7 @@
       </p>
     </div>
   </div>
-  <div class="footer-page__col">
+  <div class="col-12 col-xl-2 footer-page__col">
     <div class="contact">
       <div class="title">Контакты</div>
       <span class="item">г. Москва, Ленинградское ш., д. 25 (Мебельный центр)</span>
@@ -516,6 +579,22 @@
       <span class="item">с 10:00 до 21:00 ежедневно</span>
       <a href="tel:+7 (927) 857-13-26">+7 (927) 857-13-26</a>
     </div>
+    <ul class="social social_mobile">
+      <li class="social__item">
+        <a href="#" class="social__icon">
+          <img class="no-hover" src="./images/icons/youtube.png" alt="">
+          <img class="icon-hover" src="./images/icons/youtube-hover.png" alt="">
+        </a>
+      </li>
+      <li class="social__item">
+        <a href="#" class="social__icon">
+          <img class="no-hover" src="./images/icons/wk.png" alt="">
+          <img class="icon-hover" src="./images/icons/wk-hover.png" alt="">
+        </a>
+      </li>
+    </ul>
+    <a href="#" class="footer-page__col-btn mobile-btn">Рассказать нам идею</a>
+    <span class="privacy-site">© «kitchen.store / кухонный магазин — кухни на заказ Москва, производство кухонь по индивидуальным размерам» Kitchen Store © 2022 All rights reserved!</span>
   </div>
 </div>
 
@@ -560,6 +639,7 @@
     </div>
   </body>
 
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="./js/bootstrap.bundle.min.js"></script>
   <script src="./js/jquery.js"></script>

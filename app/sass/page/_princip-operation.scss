@@ -7,19 +7,37 @@
 .operation__content {
     &:first-child {
         margin-bottom: 10rem;
+
+        @include respond(mobilemini) {
+          margin-bottom: 3rem;
+        }
     }
 
     .service {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 30px;
+        
+
+        @include respond(lgdsf) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @include respond(desktop) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include respond(phone) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 7rem;
+        }
 
         & .service__item {
             display: flex;
             flex-direction: column;
             align-items: center;
             position: relative;
-            max-width: 163px;
+            // max-width: 163px;
             width: 100%;
             // flex: 0 0 calc((100% - 6*0px) / 6);
             //  max-width: calc((100% - 6*0px) / 6);
@@ -32,10 +50,51 @@
                 content: "";
                 position: absolute;
                 top: 33px;
-                left: 95%;
+                left: 84%;
                 width: 11rem;
                 border: 1px dashed #A7A7A7;
+
+                @include respond(desktop) {
+                  left: 70%;
+                }
+
+                @include respond(tabdesk) {
+                  left: 75%;
+                }
+                
+                @include respond(phone) {
+                  left: 90%;
+                }
             }
+
+            @include respond(phone) {
+                &:nth-child(2)::after {
+                    top: 110%;
+                    transform: rotate(180deg);
+                    left: 50%;
+                    height: 40%;
+                    width: 2px;
+                }
+                &:nth-child(3)::after {
+                    top: 110%;
+                    transform: rotate(180deg);
+                    left: 50%;
+                    height: 40%;
+                    width: 2px;
+                }
+                &:nth-child(3)::before {
+                    content: "";
+                    position: absolute;
+                    top: 33px;
+                    left: 90%;
+                    width: 11rem;
+                    border: 1px dashed #A7A7A7;
+                }
+                &:nth-child(4)::after {
+                    display: none;
+                }
+            }
+
             & .icon {
                 width: 7rem;
                 height: 7rem;
@@ -53,6 +112,11 @@
                 color: #000;
                 max-width: 163px;
                 text-align: center;
+
+                @include respond(phone) {
+                    font-size: 14px;
+                    line-height: 17px;
+                }
             }
         }
         & .service__item.active {

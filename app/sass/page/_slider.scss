@@ -16,6 +16,11 @@
 .slider__inner {
     padding-left: 7rem;
     padding-right: 7rem;
+
+    @include respond(tabdesk) {
+      padding-right: 0;
+      padding-left: 0;
+    }
 }
 
 .slider__item {
@@ -24,10 +29,25 @@
   justify-content: space-between;
   min-height: 40rem;
 
-  & .col-6:first-child {
+  & .col-12:first-child {
     margin-right: 7rem;
     max-width: 60rem;
+
+    @include respond(desktop) {
+      max-width: 100%;
+      margin-right: 0;
+    }
+
+    @include respond(tabdesk) {
+      text-align: center;
+    }
   }
+  & .col-12:last-child {
+    @include respond(tabdesk) {
+      display: none;
+    }
+  }
+
 }
 
 .swiper-button-prev::after,
@@ -49,9 +69,20 @@
     }
 }
 
+.swiper-button-next, .swiper-rtl .swiper-button-prev,
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+  @include respond(phone) {
+    top: 95%;
+  }
+}
+
 .slider__item-heading {
   margin-bottom: 5rem;
   color: #ffffff;
+
+  @include respond(tabdesk) {
+    margin-bottom: 1rem;
+  }
 
   & .title {
     font-weight: 600;
@@ -66,6 +97,21 @@
     & span {
       font-weight: 400;
       display: contents;
+
+      @include respond(tabdesk) {
+        font-size: 18px;
+        line-height: 22px;
+      }
+    }
+
+    @include respond(tabdesk) {
+      font-size: 18px;
+      line-height: 22px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      justify-content: center;
     }
   }
   & .description {
@@ -74,12 +120,23 @@
     line-height: 26px;
     max-width: 423px;
     display: block;
+
+    @include respond(tabdesk) {
+      margin: 0 auto;
+      font-size: 14px;
+      line-height: 24px;
+    }
   }
 }
 
 .slider__item-btns {
   display: flex;
   align-items: center;
+
+  @include respond(tabdesk) {
+    flex-direction: column;
+    width: 100%;
+  }
   & .btn {
     font-weight: 600;
     font-size: 14px;
@@ -94,6 +151,10 @@
     max-width: 209px;
     transition: all 0.3s;
 
+    @include respond(phone) {
+      max-width: 100%;
+    }
+
     &:hover {
       background-color: #000;
       color: #ffffff;
@@ -102,6 +163,11 @@
   & .btn:first-child {
     border: 1px solid #ffffff;
     margin-right: 3rem;
+
+    @include respond(tabdesk) {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
 
     &:hover {
       border-color: transparent;
