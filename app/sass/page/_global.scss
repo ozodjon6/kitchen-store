@@ -218,6 +218,16 @@
 
   @include respond(phone) {
     overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: unset;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
   }
 }
 
@@ -232,9 +242,19 @@
   @include respond(phone) {
     overflow-x: scroll;
     white-space: nowrap;
+
+    &::-webkit-scrollbar {
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: unset;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
   }
 
-  & span {
+  & .works-title__item {
     font-weight: 400;
     font-size: 12px;
     line-height: 15px;
@@ -249,7 +269,12 @@
     @include respond(phone) {
       margin-right: 2rem;
     }
+
+    &.active {
+      text-shadow: 0 0 1px #000;
+    }
   }
+
 }
 
 .named-list {
@@ -386,8 +411,66 @@
         max-width: 100%;
         margin-right: 0;
         margin-bottom: 45px;
+        left: auto !important;
+        right: auto;
       }
     }
+  }
+}
+
+.works-view.swiper {
+  & .swiper-slide {
+    // flex: 0 0 calc((100% - 4*30px) / 4);
+    //   max-width: calc((100% - 4*30px) / 4);
+      // margin-right: 3rem;
+      margin-bottom: 56px;
+      transition: all 0.3s;
+      position: relative;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:hover {
+        & .btn {
+          background: #fbb80d;
+          color: #000000;
+        }
+      }
+
+      & .btn {
+        position: absolute;
+        right: 50%;
+        margin-right: -104px;
+        bottom: -25px;
+        background: #a7a7a7;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        height: 5rem;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 208px;
+      }
+
+      @include respond(desktop) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 calc((100% - 2*30px) / 2);
+        max-width: calc((100% - 2*30px) / 2);
+      }
+
+      @include respond(mobilemini) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 45px;
+      }
   }
 }
 
@@ -555,7 +638,7 @@
   height: 100%;
 }
 
-.feedback-_item {
+.feedback__item {
   border: 1px solid #e5e5e5;
   padding: 5rem;
   min-height: 241px;
@@ -594,28 +677,32 @@
   }
 }
 
-.swiper-pagination {
-  display: flex;
-  justify-content: center;
-}
+.works-view {
 
-.swiper-pagination .swiper-pagination-bullet {
-  width: 30px;
-  height: 30px;
-  border-radius: 0%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  line-height: 20px;
-  font-size: 16px;
-  color: #000;
-  opacity: 1;
-  border: 0 none;
-}
+  .swiper-pagination {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .swiper-pagination .swiper-pagination-bullet {
+    width: 30px;
+    height: 30px;
+    border-radius: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 20px;
+    font-size: 16px;
+    color: #000;
+    opacity: 1;
+    border: 0 none;
+  }
+  
+  .swiper-pagination .swiper-pagination-bullet-active {
+    background: #fbb80d;
+  }
 
-.swiper-pagination .swiper-pagination-bullet-active {
-  background: #fbb80d;
 }
 
 // post-view
@@ -665,6 +752,10 @@
   & .col {
     height: 208px;
     background: #c4c4c4;
+
+    & img {
+      max-height: 100%;
+    }
   }
 
   & .row {
@@ -883,7 +974,7 @@
     }
   }
 
-  & .feedback-_item {
+  & .feedback__item {
     min-height: 217px;
     &:not(:last-child) {
       margin-bottom: 3rem;
@@ -962,4 +1053,19 @@
       cursor: pointer;
     }
   }
+}
+
+/// comment all comment btn
+
+.b-toggle {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity .3s, max-height .3s;
+  _display: none;
+}
+.expanded {
+  max-height: 100%;
+  opacity: 1;
+  _display: block;
 }

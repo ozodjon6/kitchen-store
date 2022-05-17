@@ -54,7 +54,8 @@
                     position: absolute;
                     bottom: -15px;
                     left: 50%;
-                    margin-left: 0;
+                    margin-left: -15px;
+                    right: auto;
                   }
             }
             &::before {
@@ -70,6 +71,8 @@
                 @include respond(mobilemini) {
                     bottom: -15px;
                     left: 50%;
+                    margin-left: -15px;
+                    right: auto;
                   }
             }
         }
@@ -334,6 +337,7 @@
         
         @include respond(mobilemini) {
           margin-right: 0;
+          width: 100%;
         }
         & .contacts__checkbox-mask {
             transition: all 0.3s;
@@ -354,6 +358,7 @@
         display: block;
         min-width: 239px;
         margin-bottom: 2rem;
+        letter-spacing: -0.5px;
 
         &:hover {
             cursor: pointer;
@@ -370,7 +375,8 @@
 .form-wrap__row.contact-form__wrapper {
     display: flex;
     align-items: center;
-    max-width: 100%;
+    max-width: 797px;
+    width: 100%;
 
     @include respond(mobilemini) {
       flex-direction: column;

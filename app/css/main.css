@@ -655,9 +655,9 @@ template {
 }
 .mobile-device.active {
   opacity: 1;
-  -webkit-transform: translateY(1rem);
-  -ms-transform: translateY(1rem);
-  transform: translateY(1rem);
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
   pointer-events: auto
 }
 .footer-page {
@@ -1021,6 +1021,16 @@ template {
     top: 95%
   }
 }
+@media (max-width:767px) {
+  .swiper-button-next {
+    right: 30%
+  }
+}
+@media (max-width:767px) {
+  .swiper-button-prev {
+    left: 30%
+  }
+}
 .slider__item-heading {
   margin-bottom: 5rem;
   color: #fff
@@ -1255,7 +1265,7 @@ template {
     top: 33px;
     left: 90%;
     width: 11rem;
-    border: 1px dashed #a7a7a7
+    border: 1px dashed #fbb80d
   }
   .operation__content .service .service__item:nth-child(4)::after {
     display: none
@@ -1292,10 +1302,10 @@ template {
     line-height: 17px
   }
 }
-.operation__content .service .service__item.active:not(:last-child)::after {
+.operation__content .service .service__item:not(:last-child)::after {
   border-color: #fbb80d
 }
-.operation__content .service .service__item.active .icon {
+.operation__content .service .service__item .icon {
   background: #fbb80d
 }
 .accordion-section .title {
@@ -1357,7 +1367,8 @@ template {
     position: absolute;
     bottom: -15px;
     left: 50%;
-    margin-left: 0
+    margin-left: -15px;
+    right: auto
   }
 }
 .accordion-section .accordion-item .accordion-button::before {
@@ -1374,7 +1385,9 @@ template {
 @media (max-width:767px) {
   .accordion-section .accordion-item .accordion-button::before {
     bottom: -15px;
-    left: 50%
+    left: 50%;
+    margin-left: -15px;
+    right: auto
   }
 }
 .accordion-section .accordion-item .accordion-button:focus {
@@ -1662,7 +1675,8 @@ template {
 }
 @media (max-width:767px) {
   .contacts__checkboxes-row .contacts__checkbox-wrap {
-    margin-right: 0
+    margin-right: 0;
+    width: 100%
   }
 }
 .contacts__checkboxes-row .contacts__checkbox-wrap .contacts__checkbox-mask {
@@ -1683,7 +1697,8 @@ template {
   line-height: 20px;
   display: block;
   min-width: 239px;
-  margin-bottom: 2rem
+  margin-bottom: 2rem;
+  letter-spacing: -.5px
 }
 .contacts__checkboxes-row .contacts__checkbox-mask:hover {
   cursor: pointer
@@ -1700,7 +1715,8 @@ template {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  max-width: 100%
+  max-width: 797px;
+  width: 100%
 }
 @media (max-width:767px) {
   .form-wrap__row.contact-form__wrapper {
@@ -1784,6 +1800,11 @@ template {
 .section-page.group-player .video {
   height: 50rem
 }
+@media (max-width:767px) {
+  .section-page.group-player .video {
+    height: 288px
+  }
+}
 .video__link {
   position: absolute;
   top: 0;
@@ -1817,6 +1838,12 @@ template {
 .video__button-shape {
   fill: #212121;
   fill-opacity: .999
+}
+@media (max-width:767px) {
+  .video__button-shape {
+    width: 7rem;
+    height: 7rem
+  }
 }
 .video__button-shape.video__button-shape-red {
   fill: red;
@@ -2039,6 +2066,15 @@ template {
   .furniture__content:first-child {
     overflow-x: scroll
   }
+  .furniture__content:first-child::-webkit-scrollbar {
+    background-color: transparent
+  }
+  .furniture__content:first-child::-webkit-scrollbar-thumb {
+    background-color: unset
+  }
+  .furniture__content:first-child::-webkit-scrollbar-track {
+    background-color: transparent
+  }
 }
 .works-title {
   margin-bottom: 3rem;
@@ -2057,8 +2093,17 @@ template {
     overflow-x: scroll;
     white-space: nowrap
   }
+  .works-title::-webkit-scrollbar {
+    background-color: transparent
+  }
+  .works-title::-webkit-scrollbar-thumb {
+    background-color: unset
+  }
+  .works-title::-webkit-scrollbar-track {
+    background-color: transparent
+  }
 }
-.works-title span {
+.works-title .works-title__item {
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
@@ -2067,14 +2112,17 @@ template {
   -o-transition: all .3s;
   transition: all .3s
 }
-.works-title span:hover {
+.works-title .works-title__item:hover {
   text-shadow: 0 0 1px #000;
   cursor: pointer
 }
 @media (max-width:768px) {
-  .works-title span {
+  .works-title .works-title__item {
     margin-right: 2rem
   }
+}
+.works-title .works-title__item.active {
+  text-shadow: 0 0 1px #000
 }
 .named-list {
   display: -webkit-box;
@@ -2232,6 +2280,73 @@ template {
 }
 @media (max-width:767px) {
   .works-view .works-view__inner .works-view__item {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 45px;
+    left: auto!important;
+    right: auto
+  }
+}
+.works-view.swiper .swiper-slide {
+  margin-bottom: 56px;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  position: relative
+}
+.works-view.swiper .swiper-slide:hover {
+  cursor: pointer
+}
+.works-view.swiper .swiper-slide:hover .btn {
+  background: #fbb80d;
+  color: #000
+}
+.works-view.swiper .swiper-slide .btn {
+  position: absolute;
+  right: 50%;
+  margin-right: -104px;
+  bottom: -25px;
+  background: #a7a7a7;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  height: 5rem;
+  width: 100%;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  max-width: 208px
+}
+@media (max-width:1199px) {
+  .works-view.swiper .swiper-slide {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc((100% - 2*30px)/ 2);
+    flex: 0 0 calc((100% - 2*30px)/ 2);
+    max-width: calc((100% - 2*30px)/ 2)
+  }
+}
+@media (max-width:767px) {
+  .works-view.swiper .swiper-slide {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
@@ -2409,7 +2524,7 @@ template {
   width: 100%;
   height: 100%
 }
-.feedback-_item {
+.feedback__item {
   border: 1px solid #e5e5e5;
   padding: 5rem;
   min-height: 241px;
@@ -2418,38 +2533,38 @@ template {
   transition: all .3s
 }
 @media (max-width:991px) {
-  .feedback-_item {
+  .feedback__item {
     padding: 2rem;
     text-align: center
   }
 }
-.feedback-_item:hover {
+.feedback__item:hover {
   border-color: #fbb80d;
   cursor: pointer
 }
-.feedback-_item .title {
+.feedback__item .title {
   font-weight: 600;
   font-size: 24px;
   line-height: 29px;
   margin-bottom: 1rem
 }
 @media (max-width:991px) {
-  .feedback-_item .title {
+  .feedback__item .title {
     font-size: 16px;
     line-height: 20px
   }
 }
-.feedback-_item .description {
+.feedback__item .description {
   font-weight: 400;
   font-size: 14px;
   line-height: 24px
 }
 @media (max-width:991px) {
-  .feedback-_item .description {
+  .feedback__item .description {
     font-size: 12px
   }
 }
-.swiper-pagination {
+.works-view .swiper-pagination {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2457,7 +2572,7 @@ template {
   -ms-flex-pack: center;
   justify-content: center
 }
-.swiper-pagination .swiper-pagination-bullet {
+.works-view .swiper-pagination .swiper-pagination-bullet {
   width: 30px;
   height: 30px;
   border-radius: 0;
@@ -2477,7 +2592,7 @@ template {
   opacity: 1;
   border: 0 none
 }
-.swiper-pagination .swiper-pagination-bullet-active {
+.works-view .swiper-pagination .swiper-pagination-bullet-active {
   background: #fbb80d
 }
 .post-view .global-heading {
@@ -2538,6 +2653,9 @@ template {
 .post-view .col {
   height: 208px;
   background: #c4c4c4
+}
+.post-view .col img {
+  max-height: 100%
 }
 .post-view .row p {
   font-weight: 400;
@@ -2725,13 +2843,13 @@ template {
 .comment-post .feedback__wrapper .white-btn {
   margin-right: auto
 }
-.comment-post .feedback-_item {
+.comment-post .feedback__item {
   min-height: 217px
 }
-.comment-post .feedback-_item:not(:last-child) {
+.comment-post .feedback__item:not(:last-child) {
   margin-bottom: 3rem
 }
-.comment-post .feedback-_item h4 span {
+.comment-post .feedback__item h4 span {
   color: #818181;
   font-weight: 400;
   font-size: 16px;
@@ -2810,5 +2928,17 @@ template {
 }
 .popup-page .popu-page__close:hover {
   cursor: pointer
+}
+.b-toggle {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: opacity .3s,max-height .3s;
+  -o-transition: opacity .3s,max-height .3s;
+  transition: opacity .3s,max-height .3s
+}
+.expanded {
+  max-height: 100%;
+  opacity: 1
 }
 /*# sourceMappingURL=app/css/main.css.map */

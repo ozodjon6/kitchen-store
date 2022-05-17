@@ -104,36 +104,60 @@
                     <h3 class="title">Наши отзывы</h3>
                     <span class="text">Что о нас говорять наши клиенты, мы всегда рады помоч всем!</span>
                   </div>
-                  <a href="#" class="white-btn">оставить отзыв</a>
+                  <a href="#" class="white-btn add-comment">оставить отзыв</a>
               </div>
               <div class="feedback__wrapper">
                   <div class="feedback__inner">
-                      <div class="feedback-_item">
+                      <div class="feedback__item">
                           <h4 class="title">Игорь Расланович 
                             <span>15.04.2022</span>
                           </h4>
                           <span class="description">Заказал у этих ребять Работы, которые представляют для компании особую ценность. Каждая из этих кухонь сделала счастливыми своих заказчиков Заказал у этих ребять Работы, которые представляют для компании особую ценность. Каждая из этих кухонь сделала счастливыми своих заказчиков</span>
                       </div>
-                      <div class="feedback-_item">
+                      <div class="feedback__item">
                           <h4 class="title">Игорь Расланович
                             <span>15.04.2022</span>
                           </h4>
                           <span class="description">Заказал у этих ребять Работы, которые представляют для компании особую ценность. Каждая из этих кухонь сделала счастливыми своих заказчиков Заказал у этих ребять Работы, которые представляют для компании особую ценность. Каждая из этих кухонь сделала счастливыми своих заказчиков</span>
                       </div>
-                      <div class="feedback-_item">
+                      <div class="feedback__item">
                           <h4 class="title">Ozodbek Jumaev
                             <span>15.04.2022</span>
                           </h4>
                           <span class="description">Заказал у этих ребять Работы, которые представляют для компании особую ценность. Каждая из этих кухонь сделала счастливыми своих заказчиков Заказал у этих ребять Работы, которые представляют для компании особую ценность. Каждая из этих кухонь сделала счастливыми своих заказчиков</span>
                       </div>
-                      <div class="feedback-_item">
+                      <div class="feedback__item">
                           <h4 class="title">Shox
                             <span>15.04.2022</span>
                           </h4>
                           <span class="description">bir nimalar</span>
                       </div>
+                      <div class="feedback__all-comment">
+                          <div id="informer" class="b-toggle">
+                            <div class="feedback__item">
+                              <h4 class="title">white_raven
+                                <span>18.05.2022</span>
+                              </h4>
+                              <span class="description">Добрый день!
+                                Прошу помочь разобраться с обработкой клика:</span>
+                            </div>
+                            <div class="feedback__item">
+                                <h4 class="title">j0hnik j0hnik
+                                  <span>15.04.2022</span>
+                                </h4>
+                                <span class="description">Рони, спасибо огромное, вы мне очень помогли! Это даже больше, чем было нужно) Единственное, может Вы меня ещё ткнете куда-нибудь, где можно посмотреть варианты чтобы "плавно появлялся бы один большой информационный блок" при клике? Менять при клике свойство display не подходит, нужно, чтобы блок с содержимым выезжал как бы из ниоткуда)
+                                </span>
+                            </div>
+                            <div class="feedback__item">
+                                <h4 class="title">What is Lorem Ipsum?
+                                  <span>18.05.2022</span>
+                                </h4>
+                                <span class="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+                            </div>
+                          </div>
+                      </div>
                   </div>
-                  <a href="#" class="white-btn">остальные отзывы</a>
+                  <a href="#" class="white-btn all-comment">остальные отзывы</a>
               </div>
               </div>
             </section>
@@ -311,39 +335,82 @@
     </div>
      <div class="nav-overlay"></div>
 
-    <div class="popup-page">
-      <div class="popup-page__inner">
-        <form action="#" class="form-wrap">
-          <div class="form-wrap__heading">
-            <div class="title">Оставить заявку</div>
-            <span class="text">Оставьте свои контакты, мы Вам перезвоним</span>
-          </div>
-          <div class="form-wrap__row">
-            <div class="form-wrap__field">
-              <input type="text" required placeholder="Введите Ваши имя" />
-            </div>
-            <div class="form-wrap__field">
-              <input type="email" required placeholder="Введите Ваш номер" />
-            </div>
-          </div>
-          <div class="form-wrap__btn">
-            <button class="orange-btn" type="submit">Отправить</button>
-          </div>
-          <div class="form-wrap__checkboxes">
-            <div class="form-wrap__checkboxes-row">
-              <label class="form-wrap__checkbox-wrap">
-                <input type="radio" name="theme" value="Taklif" />
-                <span class="form-wrap__checkbox-mask"></span>
-                <span class="form-wrap__checkbox-text">я принимаю условия <a href="#">политика конфиденциальности</a></span>
-              </label>
-            </div>
-          </div>
-        </form>
-        <div class="popu-page__close" id="close-btn">
-          <img src="./images/icons/close.svg" alt="">
+<div class="popup-page">
+  <div class="popup-page__inner">
+    <form action="#" class="form-wrap">
+      <div class="form-wrap__heading">
+        <div class="title">Оставить заявку</div>
+        <span class="text">Оставьте свои контакты, мы Вам перезвоним</span>
+      </div>
+      <div class="form-wrap__row">
+        <div class="form-wrap__field">
+          <input type="text" required placeholder="Введите Ваши имя" />
+        </div>
+        <div class="form-wrap__field">
+          <input type="email" required placeholder="Введите Ваш номер" />
         </div>
       </div>
+      <div class="form-wrap__btn">
+        <button class="orange-btn" type="submit">Отправить</button>
+      </div>
+      <div class="form-wrap__checkboxes">
+        <div class="form-wrap__checkboxes-row">
+          <label class="form-wrap__checkbox-wrap">
+            <input type="radio" name="theme" value="Taklif" />
+            <span class="form-wrap__checkbox-mask"></span>
+            <span class="form-wrap__checkbox-text"
+              >я принимаю условия
+              <a href="#">политика конфиденциальности</a></span
+            >
+          </label>
+        </div>
+      </div>
+    </form>
+    <div class="popu-page__close" id="close-btn">
+      <img src="./images/icons/close.svg" alt="" />
     </div>
+  </div>
+</div>
+
+     <div class="nav-overlay"></div>
+
+<div class="popup-page comment">
+  <div class="popup-page__inner">
+    <form action="#" class="form-wrap">
+      <div class="form-wrap__heading">
+        <div class="title">Оставить отзыв</div>
+        <span class="text">Оставьте свои мнение</span>
+      </div>
+      <div class="form-wrap__row">
+        <div class="form-wrap__field">
+          <input type="text" required placeholder="Введите Ваши имя" />
+        </div>
+        <div class="form-wrap__field">
+          <textarea cols="30" rows="10" placeholder="Ваш отзыв"></textarea>
+        </div>
+      </div>
+      <div class="form-wrap__btn">
+        <button class="orange-btn" type="submit">Отправить</button>
+      </div>
+      <div class="form-wrap__checkboxes">
+        <div class="form-wrap__checkboxes-row">
+          <label class="form-wrap__checkbox-wrap">
+            <input type="radio" name="theme" value="Taklif" />
+            <span class="form-wrap__checkbox-mask"></span>
+            <span class="form-wrap__checkbox-text"
+              >я принимаю условия
+              <a href="#">политика конфиденциальности</a></span
+            >
+          </label>
+        </div>
+      </div>
+    </form>
+    <div class="popu-page__close">
+      <img src="./images/icons/close.svg" alt="" />
+    </div>
+  </div>
+</div>
+
   </body>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

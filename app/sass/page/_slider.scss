@@ -76,6 +76,17 @@
   }
 }
 
+.swiper-button-next {
+  @include respond(mobilemini) {
+    right: 30%;
+  }
+}
+.swiper-button-prev {
+  @include respond(mobilemini) {
+    left: 30%;
+  }
+}
+
 .slider__item-heading {
   margin-bottom: 5rem;
   color: #ffffff;
