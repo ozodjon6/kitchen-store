@@ -110,90 +110,146 @@
                 <div class="furniture">
                   <div class="furniture__content">
                     <ul class="named-list">
-                      <li class="named-list__item">
-                          <img src="./images/icons/kitchen.png" alt="">
-                          <p>Кухни</p>
+                      <li class="named-list__item" data-filter="kitchen">
+                        <img src="./images/icons/kitchen.png" alt="" />
+                        <p>Кухни</p>
                       </li>
-                      <li class="named-list__item">
-                          <img class="no-hover" src="./images/icons/closet.png" alt="">
-                          <img class="img-hover" src="./images/icons/closet-hover.png" alt="">
-                          <p>Шкафы</p>
+                      <li class="named-list__item" data-filter="closet">
+                        <img
+                          class="no-hover"
+                          src="./images/icons/closet.png"
+                          alt=""
+                        />
+                        <img
+                          class="img-hover"
+                          src="./images/icons/closet-hover.png"
+                          alt=""
+                        />
+                        <p>Шкафы</p>
                       </li>
-                      <li class="named-list__item">
-                          <img class="no-hover" src="./images/icons/dressing.png" alt="">
-                          <img class="img-hover" src="./images/icons/dressing-hover.png" alt="">
-                          <p>Гардеробные</p>
+                      <li class="named-list__item" data-filter="dressing">
+                        <img
+                          class="no-hover"
+                          src="./images/icons/dressing.png"
+                          alt=""
+                        />
+                        <img
+                          class="img-hover"
+                          src="./images/icons/dressing-hover.png"
+                          alt=""
+                        />
+                        <p>Гардеробные</p>
                       </li>
-                      <li class="named-list__item">
-                          <img class="no-hover" src="./images/icons/baby.png" alt="">
-                          <img class="img-hover" src="./images/icons/baby-hover.png" alt="">
-                          <p>Детские</p>
+                      <li class="named-list__item" data-filter="babyroom">
+                        <img
+                          class="no-hover"
+                          src="./images/icons/baby.png"
+                          alt=""
+                        />
+                        <img
+                          class="img-hover"
+                          src="./images/icons/baby-hover.png"
+                          alt=""
+                        />
+                        <p>Детские</p>
                       </li>
-                      <li class="named-list__item">
-                          <img class="no-hover" src="./images/icons/bathroom.png" alt="">
-                          <img class="img-hover" src="./images/icons/bathroom-hover.png" alt="">
-                          <p>Мебель в санузел</p>
+                      <li class="named-list__item" data-filter="bathroom">
+                        <img
+                          class="no-hover"
+                          src="./images/icons/bathroom.png"
+                          alt=""
+                        />
+                        <img
+                          class="img-hover"
+                          src="./images/icons/bathroom-hover.png"
+                          alt=""
+                        />
+                        <p>Мебель в санузел</p>
                       </li>
-                      <li class="named-list__item">
-                          <img class="no-hover" src="./images/icons/living.png" alt="">
-                          <img class="img-hover" src="./images/icons/living-hover.png" alt="">
-                          <p>Гостиные</p>
+                      <li class="named-list__item" data-filter="livingroom">
+                        <img
+                          class="no-hover"
+                          src="./images/icons/living.png"
+                          alt=""
+                        />
+                        <img
+                          class="img-hover"
+                          src="./images/icons/living-hover.png"
+                          alt=""
+                        />
+                        <p>Гостиные</p>
                       </li>
-                  </ul>
+                    </ul>
                   </div>
                   <div class="furniture__content">
                     <div class="works-title">
-                      <span>Лофт</span>
-                      <span>Модерн</span>
-                      <span>Неоклассика</span>
-                      <span>Хай-тек</span>
-                      <span>Скандинавский</span>
-                      <span>Минимализм</span>
-                      <span>Прованс</span>
-                      <span>Стильные</span>
+                      <span class="works-title__item" data-filter="loft"
+                        >Лофт</span
+                      >
+                      <span class="works-title__item" data-filter="modern"
+                        >Модерн</span
+                      >
+                      <span class="works-title__item" data-filter="classika"
+                        >Неоклассика</span
+                      >
+                      <span class="works-title__item" data-filter="heytek"
+                        >Хай-тек</span
+                      >
+                      <span class="works-title__item" data-filter="scandinavian"
+                        >Скандинавский</span
+                      >
+                      <span class="works-title__item" data-filter="minimalism"
+                        >Минимализм</span
+                      >
+                      <span class="works-title__item" data-filter="provence"
+                        >Прованс</span
+                      >
+                      <span class="works-title__item" data-filter="stylish"
+                        >Стильные</span
+                      >
                     </div>
-                    <ul class="swiper works-view mySwiper">
-                      <div class="works-view__inner swiper-wrapper">
-                        <li class="works-view__item swiper-slide">
+                    <ul class="works-view">
+                      <div class="works-view__inner">
+                        <a href="./kitchen-model-child.html" class="works-view__item kitchen stylish">
                           <img src="./images/img/work-1.jpg" alt="" />
-                          <a href="./kitchen-model-child.html" class="btn">Подробнее</a>
-                        </li>
-                        <li class="works-view__item swiper-slide">
+                          <button class="btn">Подробнее</button>
+                        </a>
+                        <a href="./kitchen-model-child.html" class="works-view__item closet babyroom">
                           <img src="./images/img/work-2.jpg" alt="" />
-                          <a href="./kitchen-model-child.html" class="btn">Подробнее</a>
-                        </li>
-                        <li class="works-view__item swiper-slide">
+                          <button class="btn">Подробнее</button>
+                        </a>
+                        <a href="./kitchen-model-child.html" class="works-view__item kitchen scandinavian">
                           <img src="./images/img/work-3.jpg" alt="" />
-                          <a href="./kitchen-model-child.html" class="btn">Подробнее</a>
-                        </li>
-                        <li class="works-view__item swiper-slide">
+                          <button class="btn">Подробнее</button>
+                        </a>
+                        <a href="./kitchen-model-child.html" class="works-view__item closet babyroom livingroom">
                           <img src="./images/img/work-4.jpg" alt="" />
-                          <a href="./kitchen-model-child.html" class="btn">Подробнее</a>
-                        </li>
-                        <li class="works-view__item swiper-slide">
+                          <button class="btn">Подробнее</button>
+                        </a>
+                        <a href="./kitchen-model-child.html" class="works-view__item dressing babyroom livingroom">
                           <img src="./images/img/work-4.jpg" alt="" />
-                          <a href="./kitchen-model-child.html" class="btn">Подробнее</a>
-                        </li>
-                        <li class="works-view__item swiper-slide">
+                          <button class="btn">Подробнее</button>
+                        </a>
+                        <a href="./kitchen-model-child.html" class="works-view__item bathroom classika">
                           <img src="./images/img/work-4.jpg" alt="" />
-                          <a href="./kitchen-model-child.html" class="btn">Подробнее</a>
-                        </li>
-                        <li class="works-view__item swiper-slide">
+                          <button class="btn">Подробнее</button>
+                        </a>
+                        <a href="./kitchen-model-child.html" class="works-view__item provence heytek loft">
                           <img src="./images/img/work-4.jpg" alt="" />
-                          <a href="./kitchen-model-child.html" class="btn">Подробнее</a>
-                        </li>
-                        <li class="works-view__item swiper-slide">
+                          <button class="btn">Подробнее</button>
+                        </a>
+                        <a href="./kitchen-model-child.html" class="works-view__item loft minimalism">
                           <img src="./images/img/work-4.jpg" alt="" />
-                          <a href="./kitchen-model-child.html" class="btn">Подробнее</a>
-                        </li>
-                        <li class="works-view__item swiper-slide">
+                          <button class="btn">Подробнее</button>
+                        </a>
+                        <a href="./kitchen-model-child.html" class="works-view__item bathroom modern">
                           <img src="./images/img/work-4.jpg" alt="" />
-                          <a href="./kitchen-model-child.html" class="btn">Подробнее</a>
-                        </li>
-                        <li class="works-view__item swiper-slide">
+                          <button class="btn">Подробнее</button>
+                        </a>
+                        <a href="./kitchen-model-child.html" class="works-view__item dressing">
                           <img src="./images/img/work-4.jpg" alt="" />
-                          <a href="./kitchen-model-child.html" class="btn">Подробнее</a>
-                        </li>
+                          <button class="btn">Подробнее</button>
+                        </a>
                       </div>
                       <div class="swiper-pagination"></div>
                     </ul>
@@ -286,7 +342,7 @@
         <footer class="footer-page">
           <div class="container">
             <div class="footer-page__inner">
-  <div class="col-12 col-xl-2 footer-page__col">
+  <div class="col-12 col-xl-3 footer-page__col">
     <ul class="product">
       <li class="product__item">
         <a href="#" class="product__link">Кухни</a>
@@ -309,7 +365,7 @@
     </ul>
     <a href="#" class="footer-page__col-btn">Рассказать нам идею</a>
   </div>
-  <div class="col-12 col-xl-8 footer-page__col">
+  <div class="col-12 col-xl-6 footer-page__col">
     <div class="footer-page__content">
       <ul class="footer-page__nav">
         <li class="footer-page__nav-item">
@@ -351,7 +407,7 @@
       </p>
     </div>
   </div>
-  <div class="col-12 col-xl-2 footer-page__col">
+  <div class="col-12 col-xl-3 footer-page__col">
     <div class="contact">
       <div class="title">Контакты</div>
       <span class="item">г. Москва, Ленинградское ш., д. 25 (Мебельный центр)</span>
@@ -455,6 +511,51 @@
       </div>
     </form>
     <div class="popu-page__close">
+      <img src="./images/icons/close.svg" alt="" />
+    </div>
+  </div>
+</div>
+
+     <div class="nav-overlay"></div>
+
+<div class="popup-page idea">
+  <div class="popup-page__inner">
+    <form action="#" class="form-wrap">
+      <div class="form-wrap__heading">
+        <div class="title">Рассказать нам идею</div>
+        <span class="text">Мы сделаем все Ваши идее!</span>
+      </div>
+      <div class="form-wrap__row">
+        <div class="form-wrap__field">
+          <input type="text" required placeholder="Введите Ваши имя" />
+        </div>
+        <div class="form-wrap__field">
+          <input type="email" required placeholder="Введите Ваши фамилия" />
+        </div>
+        <div class="form-wrap__field">
+          <input type="email" required placeholder="Ваш почта" />
+        </div>
+        <div class="form-wrap__field">
+          <textarea cols="30" rows="10" placeholder="Ваш отзыв"></textarea>
+        </div>
+      </div>
+      <div class="form-wrap__btn">
+        <button class="orange-btn" type="submit">Отправить</button>
+      </div>
+      <div class="form-wrap__checkboxes">
+        <div class="form-wrap__checkboxes-row">
+          <label class="form-wrap__checkbox-wrap">
+            <input type="radio" name="theme" value="Taklif" />
+            <span class="form-wrap__checkbox-mask"></span>
+            <span class="form-wrap__checkbox-text"
+              >я принимаю условия
+              <a href="#">политика конфиденциальности</a></span
+            >
+          </label>
+        </div>
+      </div>
+    </form>
+    <div class="popu-page__close" id="close-btn">
       <img src="./images/icons/close.svg" alt="" />
     </div>
   </div>

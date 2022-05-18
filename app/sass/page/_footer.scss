@@ -44,7 +44,7 @@
   }
 
   & .footer-page__col:last-child {
-      text-align: center;
+      // text-align: center;  
 
       & .privacy-site {
           display: none;
@@ -232,6 +232,7 @@
       line-height: 17px;
       margin-bottom: 5rem;
       display: block;
+      max-width: 20rem;
 
       @include respond(mobilemini) {
         max-width: 208px;

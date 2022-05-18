@@ -155,12 +155,16 @@ findVideos();
       const closeBtn = document.querySelectorAll(".popu-page__close");
       const menuItemOpen = document.querySelectorAll(".menu-item-open");
       const popupPage = document.querySelector(".popup-page");
+      const popupPageTitle = document.querySelector(".popup-page .title");
       const popupPageComment = document.querySelector(".popup-page.comment");
+      const popupPageIdea = document.querySelector(".popup-page.idea");
       const addCommentBtn = document.querySelector(".add-comment");
       const navOverlay = document.querySelector(".nav-overlay");
       const headerPageHamburger = document.querySelector(".header-page__hamburger");
       const mobileDevice = document.querySelector(".mobile-device");
       const headerPage = document.querySelector(".header-page");
+      const footerPageColBtn = document.querySelectorAll(".footer-page__col-btn");
+      const bacCallBtn = document.querySelectorAll(".bac-call-btn");
     
       for (let i = 0; i < menuItemOpen.length; i++) {
         menuItemOpen[i].addEventListener("click", function(e) {
@@ -170,6 +174,25 @@ findVideos();
           navOverlay.style = "display: block; z-index: 35;";
         })
       }
+
+      for (let i = 0; i < bacCallBtn.length; i++) {
+        bacCallBtn[i].addEventListener("click", function(e) {
+          e.preventDefault();
+    
+          popupPage.classList.add("open");
+          navOverlay.style = "display: block; z-index: 35;";
+          popupPageTitle.innerHTML = "Отправить заявку";
+        })
+      }
+
+      for(let i = 0; i < footerPageColBtn.length; i++) {
+        footerPageColBtn[i].addEventListener("click", function(e) {
+          e.preventDefault();
+
+          popupPageIdea.classList.add("open");
+          navOverlay.style = "display: block;";
+        })
+      }
     
       navOverlay.onclick = function () {
         popupPage.classList.remove("open");
@@ -177,6 +200,8 @@ findVideos();
         mobileDevice.classList.remove("active");
         headerPageHamburger.classList.remove("active");
         popupPageComment.classList.remove("open");
+        popupPageIdea.classList.remove("open");
+        popupPageTitle.innerHTML = "Оставить заявку";
       };
     
       for(let i = 0; i < closeBtn.length; i++) {
@@ -184,6 +209,8 @@ findVideos();
           popupPage.classList.remove("open");
           navOverlay.style = "display: none";
           popupPageComment.classList.remove("open");
+          popupPageIdea.classList.remove("open");
+          popupPageTitle.innerHTML = "Оставить заявку";
         };
       }
     
@@ -217,9 +244,9 @@ findVideos();
 (function () {
 
   try {
-    const elem = document.querySelector(".works-view__inner:not(.swiper-wrapper), .post-view__grid");
+    const elem = document.querySelector(".works-view__inner:not(.swiper-wrapper)");
     const iso = new Isotope(elem, {
-      itemSelector: ".works-view__item, .swiper-slide, .post-view__grid-item",
+      itemSelector: ".works-view__item, .swiper-slide",
       filter: ".kitchen, .closet",
     });
 

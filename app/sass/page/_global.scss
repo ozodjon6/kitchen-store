@@ -717,12 +717,24 @@
     }
     & .subtitle {
       display: flex;
+
+      @include respond(mobilemini) {
+        flex-direction: column;
+      }
     }
     & .text {
       color: #000000;
       display: inline;
+      @include respond(mobilemini) {
+        margin-left: 0;
+      }
       &:first-child {
         margin-right: 10rem;
+
+        @include respond(mobilemini) {
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
       }
     }
   }
@@ -736,7 +748,6 @@
     margin-right: 0px;
     margin-left: 0px;
     margin-bottom: 3rem;
-    margin-right: -3rem;
 
     @include respond(desktop) {
       grid-template-columns: repeat(4, 1fr);
@@ -752,9 +763,7 @@
   }
   & .col {
     height: 208px;
-    width: 203px;
     background: #c4c4c4;
-    margin-right: 3rem;
 
     & img {
       max-height: 100%;
@@ -784,6 +793,11 @@
   flex-direction: column;
   text-align: center;
   color: #fff;
+
+  @include respond(tabdesk) {
+    margin: auto;
+    padding: 64px 8px;
+  }
 
   & .call-support__content {
     &:first-child {
@@ -903,23 +917,54 @@
   width: 100%;
   margin-bottom: 3rem;
 
+  @include respond(tabdesk) {
+    display: flex;
+  }
+
   & thead {
+    @include respond(tabdesk) {
+      width: 100%;
+    }
     tr {
       background: #fafafa;
+
+      @include respond(tabdesk) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-left: 3rem;
+      }
 
       & td {
         padding: 12px;
         &:first-child {
           padding-left: 3rem;
+
+          @include respond(tabdesk) {
+            padding-left: 0;
+          }
         }
         &:last-child {
           padding-right: 3rem;
+        }
+
+        @include respond(tabdesk) {
+          text-align: left;
+          padding-left: 0;
+          padding-right: 0;
         }
       }
     }
   }
   & tbody {
+    @include respond(tabdesk) {
+      width: 100%;
+    }
     tr {
+      @include respond(tabdesk) {
+        display: flex;
+        flex-direction: column;
+      }
       & td {
         padding-top: 20px;
       }
@@ -1000,6 +1045,12 @@
   align-items: center;
   justify-content: center;
   margin-top: 3rem;
+
+  @include respond(tabdesk) {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
   & span {
     color: #A7A7A7;
     font-weight: 400;
@@ -1020,6 +1071,7 @@
 
 .popup-page {
   max-width: 506px;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   position: fixed;
