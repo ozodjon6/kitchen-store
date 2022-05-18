@@ -736,6 +736,7 @@
     margin-right: 0px;
     margin-left: 0px;
     margin-bottom: 3rem;
+    margin-right: -3rem;
 
     @include respond(desktop) {
       grid-template-columns: repeat(4, 1fr);
@@ -751,7 +752,9 @@
   }
   & .col {
     height: 208px;
+    width: 203px;
     background: #c4c4c4;
+    margin-right: 3rem;
 
     & img {
       max-height: 100%;

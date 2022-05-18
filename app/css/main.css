@@ -2630,7 +2630,8 @@ template {
   gap: 30px;
   margin-right: 0;
   margin-left: 0;
-  margin-bottom: 3rem
+  margin-bottom: 3rem;
+  margin-right: -3rem
 }
 @media (max-width:1199px) {
   .post-view .post-view__grid {
@@ -2652,7 +2653,9 @@ template {
 }
 .post-view .col {
   height: 208px;
-  background: #c4c4c4
+  width: 203px;
+  background: #c4c4c4;
+  margin-right: 3rem
 }
 .post-view .col img {
   max-height: 100%
