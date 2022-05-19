@@ -212,49 +212,98 @@
 </div>
 <div class="furniture">
     <div class="furniture__content">
-        <ul class="named-list">
+        <ul class="named-list nav nav-tabs">
             <li class="named-list__item active" data-filter="kitchen">
-                <img src="./images/icons/kitchen.png" alt="">
-                <p>Кухни</p>
+                <a href="#home">
+                    <img src="./images/icons/kitchen.png" alt="">
+                    <p>Кухни</p>
+                </a>
             </li>
             <li class="named-list__item" data-filter="closet">
-                <img class="no-hover" src="./images/icons/closet.png" alt="">
-                <img class="img-hover" src="./images/icons/closet-hover.png" alt="">
-                <p>Шкафы</p>
+                <a href="#menu1">
+                    <img class="no-hover" src="./images/icons/closet.png" alt="">
+                    <img class="img-hover" src="./images/icons/closet-hover.png" alt="">
+                    <p>Шкафы</p>
+                </a>
             </li>
             <li class="named-list__item" data-filter="dressing">
-                <img class="no-hover" src="./images/icons/dressing.png" alt="">
-                <img class="img-hover" src="./images/icons/dressing-hover.png" alt="">
-                <p>Гардеробные</p>
+                <a href="#menu2">
+                    <img class="no-hover" src="./images/icons/dressing.png" alt="">
+                    <img class="img-hover" src="./images/icons/dressing-hover.png" alt="">
+                    <p>Гардеробные</p>
+                </a>
             </li>
             <li class="named-list__item" data-filter="babyroom">
-                <img class="no-hover" src="./images/icons/baby.png" alt="">
-                <img class="img-hover" src="./images/icons/baby-hover.png" alt="">
-                <p>Детские</p>
+                <a href="#menu3">
+                    <img class="no-hover" src="./images/icons/baby.png" alt="">
+                    <img class="img-hover" src="./images/icons/baby-hover.png" alt="">
+                    <p>Детские</p>
+                </a>
             </li>
             <li class="named-list__item" data-filter="bathroom">
-                <img class="no-hover" src="./images/icons/bathroom.png" alt="">
-                <img class="img-hover" src="./images/icons/bathroom-hover.png" alt="">
-                <p>Мебель в санузел</p>
+                <a href="#menu4">
+                    <img class="no-hover" src="./images/icons/bathroom.png" alt="">
+                    <img class="img-hover" src="./images/icons/bathroom-hover.png" alt="">
+                    <p>Мебель в санузел</p>
+                </a>
             </li>
             <li class="named-list__item" data-filter="livingroom">
-                <img class="no-hover" src="./images/icons/living.png" alt="">
-                <img class="img-hover" src="./images/icons/living-hover.png" alt="">
-                <p>Гостиные</p>
+                <a href="#menu5">
+                    <img class="no-hover" src="./images/icons/living.png" alt="">
+                    <img class="img-hover" src="./images/icons/living-hover.png" alt="">
+                    <p>Гостиные</p>
+                </a>
             </li>
         </ul>
+        <div class="tab-content">
+            <div id="home" class="works-title tab-pane fade show in active">
+                <span class="works-title__item" data-filter="loft">Лофт</span>
+                <span class="works-title__item" data-filter="modern">Модерн</span>
+                <span class="works-title__item" data-filter="classika">Неоклассика</span>
+                <span class="works-title__item" data-filter="heytek">Хай-тек</span>
+                <span class="works-title__item" data-filter="scandinavian">Скандинавский</span>
+                <span class="works-title__item" data-filter="minimalism">Минимализм</span>
+                <span class="works-title__item" data-filter="provence">Прованс</span>
+                <span class="works-title__item" data-filter="stylish">Стильные</span>
+            </div>
+            <div id="menu1" class="tab-pane fade works-title in">
+                <span class="works-title__item" data-filter="loft">1</span>
+                <span class="works-title__item" data-filter="modern">2</span>
+                <span class="works-title__item" data-filter="classika">3</span>
+                <span class="works-title__item" data-filter="heytek">4</span>
+                <span class="works-title__item" data-filter="scandinavian">5</span>
+            </div>
+            <div id="menu2" class="tab-pane fade works-title in">
+                <span class="works-title__item" data-filter="loft">1</span>
+                <span class="works-title__item" data-filter="modern">2</span>
+                <span class="works-title__item" data-filter="classika">3</span>
+            </div>
+            <div id="menu3" class="tab-pane fade works-title in">
+                <span class="works-title__item" data-filter="loft">1</span>
+                <span class="works-title__item" data-filter="modern">2</span>
+                <span class="works-title__item" data-filter="classika">3</span>
+                <span class="works-title__item" data-filter="heytek">4</span>
+            </div>
+            <div id="menu4" class="tab-pane fade works-title in">
+                <span class="works-title__item" data-filter="loft">1</span>
+                <span class="works-title__item" data-filter="modern">2</span>
+                <span class="works-title__item" data-filter="classika">3</span>
+                <span class="works-title__item" data-filter="heytek">4</span>
+                <span class="works-title__item" data-filter="scandinavian">5</span>
+                <span class="works-title__item" data-filter="scandinavian">6</span>
+            </div>
+            <div id="menu5" class="tab-pane fade works-title in">
+                <span class="works-title__item" data-filter="loft">1</span>
+                <span class="works-title__item" data-filter="modern">2</span>
+                <span class="works-title__item" data-filter="classika">3</span>
+                <span class="works-title__item" data-filter="heytek">4</span>
+                <span class="works-title__item" data-filter="scandinavian">5</span>
+                <span class="works-title__item" data-filter="scandinavian">6</span>
+                <span class="works-title__item" data-filter="scandinavian">7</span>
+            </div>
+        </div>
     </div>
     <div class="furniture__content">
-        <div class="works-title">
-            <span class="works-title__item" data-filter="loft">Лофт</span>
-            <span class="works-title__item" data-filter="modern">Модерн</span>
-            <span class="works-title__item" data-filter="classika">Неоклассика</span>
-            <span class="works-title__item" data-filter="heytek">Хай-тек</span>
-            <span class="works-title__item" data-filter="scandinavian">Скандинавский</span>
-            <span class="works-title__item" data-filter="minimalism">Минимализм</span>
-            <span class="works-title__item" data-filter="provence">Прованс</span>
-            <span class="works-title__item" data-filter="stylish">Стильные</span>
-        </div>
         <ul class="works-view">
             <div class="works-view__inner">
                 <a href="./our-works-child.html" class="works-view__item bathroom modern">
@@ -289,6 +338,24 @@
                     <img src="./images/img/work-4.jpg" alt="">
                     <button class="btn">Подробнее</button>
                 </a>
+                <!-- <div id="informer" class="b-toggle">
+                    <a href="./our-works-child.html" class="works-view__item closet provence loft">
+                        <img src="./images/img/work-6.jpg" alt="">
+                        <button class="btn">Подробнее</button>
+                    </a>
+                    <a href="./our-works-child.html" class="works-view__item kitchen babyroom loft">
+                        <img src="./images/img/work-5.jpg" alt="">
+                        <button class="btn">Подробнее</button>
+                    </a>
+                    <a href="./our-works-child.html" class="works-view__item dressing classika minimalism">
+                        <img src="./images/img/work-3.jpg" alt="">
+                        <button class="btn">Подробнее</button>
+                    </a>
+                    <a href="./our-works-child.html" class="works-view__item dressing modern stylish">
+                        <img src="./images/img/work-4.jpg" alt="">
+                        <button class="btn">Подробнее</button>
+                    </a>
+                  </div> -->
             </div>
         </ul>
     </div>
