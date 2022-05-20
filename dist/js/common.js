@@ -28,26 +28,24 @@
   });
 })();
 
-(function() {
-
+(function () {
   // Feedback slider
-let swiperFeedback = new Swiper(".feedback__wrapper", {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  autplay: false,
-  cssMode: false,
-  loop: false,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  breakpoints: {
-    991: {
-      slidesPerView: 2
-    }
-  }
-});
-
+  let swiperFeedback = new Swiper(".feedback__wrapper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    autplay: false,
+    cssMode: false,
+    loop: false,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      991: {
+        slidesPerView: 2,
+      },
+    },
+  });
 })();
 
 (function () {
@@ -149,102 +147,102 @@ findVideos();
 })();
 
 (function () {
- 
-    try {
+  try {
+    const closeBtn = document.querySelectorAll(".popu-page__close");
+    const menuItemOpen = document.querySelectorAll(".menu-item-open");
+    const popupPage = document.querySelector(".popup-page");
+    const popupPageTitle = document.querySelector(".popup-page .title");
+    const popupPageComment = document.querySelector(".popup-page.comment");
+    const popupPageIdea = document.querySelector(".popup-page.idea");
+    const addCommentBtn = document.querySelector(".add-comment");
+    const navOverlay = document.querySelector(".nav-overlay");
+    const headerPageHamburger = document.querySelector(
+      ".header-page__hamburger"
+    );
+    const mobileDevice = document.querySelector(".mobile-device");
+    const headerPage = document.querySelector(".header-page");
+    const footerPageColBtn = document.querySelectorAll(".footer-page__col-btn");
+    const bacCallBtn = document.querySelectorAll(".bac-call-btn");
 
-      const closeBtn = document.querySelectorAll(".popu-page__close");
-      const menuItemOpen = document.querySelectorAll(".menu-item-open");
-      const popupPage = document.querySelector(".popup-page");
-      const popupPageTitle = document.querySelector(".popup-page .title");
-      const popupPageComment = document.querySelector(".popup-page.comment");
-      const popupPageIdea = document.querySelector(".popup-page.idea");
-      const addCommentBtn = document.querySelector(".add-comment");
-      const navOverlay = document.querySelector(".nav-overlay");
-      const headerPageHamburger = document.querySelector(".header-page__hamburger");
-      const mobileDevice = document.querySelector(".mobile-device");
-      const headerPage = document.querySelector(".header-page");
-      const footerPageColBtn = document.querySelectorAll(".footer-page__col-btn");
-      const bacCallBtn = document.querySelectorAll(".bac-call-btn");
-    
-      for (let i = 0; i < menuItemOpen.length; i++) {
-        menuItemOpen[i].addEventListener("click", function(e) {
-          e.preventDefault();
-    
-          popupPage.classList.add("open");
-          navOverlay.style = "display: block; z-index: 35;";
-        })
-      }
+    for (let i = 0; i < menuItemOpen.length; i++) {
+      menuItemOpen[i].addEventListener("click", function (e) {
+        e.preventDefault();
 
-      for (let i = 0; i < bacCallBtn.length; i++) {
-        bacCallBtn[i].addEventListener("click", function(e) {
-          e.preventDefault();
-    
-          popupPage.classList.add("open");
-          navOverlay.style = "display: block; z-index: 35;";
-          popupPageTitle.innerHTML = "Отправить заявку";
-        })
-      }
+        popupPage.classList.add("open");
+        navOverlay.style = "display: block; z-index: 35;";
+      });
+    }
 
-      for(let i = 0; i < footerPageColBtn.length; i++) {
-        footerPageColBtn[i].addEventListener("click", function(e) {
-          e.preventDefault();
+    for (let i = 0; i < bacCallBtn.length; i++) {
+      bacCallBtn[i].addEventListener("click", function (e) {
+        e.preventDefault();
 
-          popupPageIdea.classList.add("open");
-          navOverlay.style = "display: block;";
-        })
-      }
-    
-      navOverlay.onclick = function () {
+        popupPage.classList.add("open");
+        navOverlay.style = "display: block; z-index: 35;";
+        popupPageTitle.innerHTML = "Отправить заявку";
+      });
+    }
+
+    for (let i = 0; i < footerPageColBtn.length; i++) {
+      footerPageColBtn[i].addEventListener("click", function (e) {
+        e.preventDefault();
+
+        popupPageIdea.classList.add("open");
+        navOverlay.style = "display: block;";
+      });
+    }
+
+    navOverlay.onclick = function () {
+      popupPage.classList.remove("open");
+      navOverlay.style = "display: none";
+      mobileDevice.classList.remove("active");
+      headerPageHamburger.classList.remove("active");
+      popupPageComment.classList.remove("open");
+      popupPageIdea.classList.remove("open");
+      popupPageTitle.innerHTML = "Оставить заявку";
+    };
+
+    for (let i = 0; i < closeBtn.length; i++) {
+      closeBtn[i].onclick = function () {
         popupPage.classList.remove("open");
         navOverlay.style = "display: none";
-        mobileDevice.classList.remove("active");
-        headerPageHamburger.classList.remove("active");
         popupPageComment.classList.remove("open");
         popupPageIdea.classList.remove("open");
         popupPageTitle.innerHTML = "Оставить заявку";
       };
-    
-      for(let i = 0; i < closeBtn.length; i++) {
-        closeBtn[i].onclick = function () {
-          popupPage.classList.remove("open");
-          navOverlay.style = "display: none";
-          popupPageComment.classList.remove("open");
-          popupPageIdea.classList.remove("open");
-          popupPageTitle.innerHTML = "Оставить заявку";
-        };
-      }
-    
-      headerPageHamburger.addEventListener("click", function () {
-        document.body.style.overflowY = "hidden";
-        document.body.style.height = "100%";
-        this.classList.toggle("active");
-        mobileDevice.classList.toggle("active");
-        navOverlay.style = "display: none";
-        headerPage.style = "background: #fff; z-index: 30;";
-    
-        if (this.classList.contains("active")) {
-          navOverlay.style = "display: block";
-        }
-      });
-    
-      addCommentBtn.addEventListener("click", function(e) {
-    
-        e.preventDefault();
-    
+    }
+
+    headerPageHamburger.addEventListener("click", function () {
+      document.body.style.overflowY = "hidden";
+      document.body.style.height = "100%";
+      this.classList.toggle("active");
+      mobileDevice.classList.toggle("active");
+      navOverlay.style = "display: none";
+      headerPage.style = "background: #fff; z-index: 30;";
+
+      if (this.classList.contains("active")) {
         navOverlay.style = "display: block";
-        popupPageComment.classList.add("open");
-      })
+      }
+    });
 
-    } catch(e) {e}
+    addCommentBtn.addEventListener("click", function (e) {
+      e.preventDefault();
 
+      navOverlay.style = "display: block";
+      popupPageComment.classList.add("open");
+    });
+  } catch (e) {
+    e;
+  }
 })();
 
 // Isotope data-filter
 
 (function () {
-
   try {
-    const elem = document.querySelector(".works-view__inner:not(.swiper-wrapper)");
+    const elem = document.querySelector(
+      ".works-view__inner:not(.swiper-wrapper)"
+    );
     const iso = new Isotope(elem, {
       itemSelector: ".works-view__item, .swiper-slide",
       filter: ".kitchen, .closet",
@@ -287,28 +285,27 @@ findVideos();
         });
       });
     });
-  } catch(e) {}
-
+  } catch (e) {}
 })();
 
+// all-comment
 
-// all-comment 
-
-(function() {
-
+(function () {
   try {
     const allCommentBtn = document.querySelector(".all-comment");
-    allCommentBtn.onclick = function (){
+    const worksViewInnerHeight = document.querySelector(".works-view__inner");
+    allCommentBtn.onclick = function () {
       var className = informer.className;
-      if( className.indexOf(' expanded') == -1 ){
-          className += ' expanded';
+      // worksViewInnerHeight.style.marginBottom = '200px';
+      this.style.opacity = '0';
+      if (className.indexOf(" expanded") == -1) {
+        className += " expanded";
       }
-      
+
       informer.className = className;
       return false;
-  }
-  } catch(e) {}
-
+    };
+  } catch (e) {}
 })();
 
 // wow-min js
@@ -317,35 +314,168 @@ new WOW().init();
 
 // Bootstrap tab
 
-$(document).ready(function(){
-  $(".nav-tabs a").click(function(){
-    $(this).tab('show');
+$(document).ready(function () {
+  $(".nav-tabs a").click(function () {
+    $(this).tab("show");
   });
-  $('.nav-tabs a').on('shown.bs.tab', function(event){
-    var x = $(event.target).text();         // active tab
-    var y = $(event.relatedTarget).text();  // previous tab
+  $(".nav-tabs a").on("shown.bs.tab", function (event) {
+    var x = $(event.target).text(); // active tab
+    var y = $(event.relatedTarget).text(); // previous tab
   });
 });
 
 // lightzoom
 
-$(function(){
-  $('.minimized').click(function(event) {
-    var i_path = $(this).attr('src');
-    $('body').append('<div id="overlay"></div><div id="magnify"><img src="'+i_path+'"><div id="close-popup"><i></i></div></div>');
-    $('#magnify').css({
-     left: ($(document).width() - $('#magnify').outerWidth())/2,
-     // top: ($(document).height() - $('#magnify').outerHeight())/2 upd: 24.10.2016
-            top: ($(window).height() - $('#magnify').outerHeight())/2
-   });
-    $('#overlay, #magnify').fadeIn('fast');
+$(function () {
+  $(".minimized").click(function (event) {
+    var i_path = $(this).attr("src");
+    $("body").append(
+      '<div id="overlay"></div><div id="magnify"><img src="' +
+        i_path +
+        '"><div id="close-popup"><i></i></div></div>'
+    );
+    $("#magnify").css({
+      left: ($(document).width() - $("#magnify").outerWidth()) / 2,
+      // top: ($(document).height() - $('#magnify').outerHeight())/2 upd: 24.10.2016
+      top: ($(window).height() - $("#magnify").outerHeight()) / 2,
+    });
+    $("#overlay, #magnify").fadeIn("fast");
   });
-  
-  $('body').on('click', '#close-popup, #overlay', function(event) {
+
+  $("body").on("click", "#close-popup, #overlay", function (event) {
     event.preventDefault();
 
-    $('#overlay, #magnify').fadeOut('fast', function() {
-      $('#close-popup, #magnify, #overlay').remove();
+    $("#overlay, #magnify").fadeOut("fast", function () {
+      $("#close-popup, #magnify, #overlay").remove();
     });
   });
 });
+
+// Pagination
+
+// let animals = [
+//   {
+//     id: 1,
+//     img: "./images/img/work-1.jpg",
+//     button: "Подробнее",
+//   },
+//   {
+//     id: 2,
+//     img: "./images/img/work-2.jpg",
+//     button: "Подробнее",
+//   },
+//   {
+//     id: 3,
+//     img: "./images/img/work-3.jpg",
+//     button: "Подробнее",
+//   },
+//   {
+//     id: 4,
+//     img: "./images/img/work-4.jpg",
+//     button: "Подробнее",
+//   },
+//   {
+//     id: 5,
+//     img: "./images/img/work-5.jpg",
+//     button: "Подробнее",
+//   },
+//   {
+//     id: 6,
+//     img: "./images/img/work-6.jpg",
+//     button: "Подробнее",
+//   },
+//   {
+//     id: 7,
+//     img: "./images/img/work-4.jpg",
+//     button: "Подробнее",
+//   },
+//   {
+//     id: 8,
+//     img: "./images/img/work-3.jpg",
+//     button: "Подробнее",
+//   },
+//   {
+//     id: 9,
+//     img: "./images/img/work-2.jpg",
+//     button: "Подробнее",
+//   },
+//   {
+//     id: 10,
+//     img: "./images/img/work-2.jpg",
+//     button: "Подробнее",
+//   },
+//   {
+//     id: 11,
+//     img: "./images/img/work-3.jpg",
+//     button: "Подробнее",
+//   },
+//   {
+//     id: 12,
+//     img: "./images/img/work-4.jpg",
+//     button: "Подробнее",
+//   },
+// ];
+
+// var pageSize = 4;
+// var currentPage = 2;
+// var pagedResults = [];
+// var totalResults = animals.length;
+
+// $(function () {
+//   function updateList() {
+//     // Grab the required section of results from the animals list
+//     var end = currentPage * pageSize;
+//     var start = end - pageSize;
+//     pagedResults = animals.slice(start, end);
+
+//     // Empty the list element before repopulation
+//     $("#list").empty();
+
+//     // Disable the previous button if we are on the first page
+//     if (currentPage <= 1) {
+//       $(".previous").prop("disabled", true);
+//     }
+
+//     // Enable the previous button if we are not on the first page
+//     else {
+//       $(".previous").prop("disabled", false);
+//     }
+
+//     // Disable the next button if we are on the last page
+//     if (currentPage * pageSize >= totalResults) {
+//       $(".next").prop("disabled", true);
+//     }
+
+//     // Enable the next button if we are not on the last page
+//     else {
+//       $(".next").prop("disabled", false);
+//     }
+
+//     //Loop through the pages results and add them to the list
+//     $.each(pagedResults, function (index, obj) {
+//       $("#list").append(
+//         `<a href='./our-works-child.html' class="works-view__item kitchen bathroom modern">
+//           <img src="${obj.img}">
+//           <button class="btn">${obj.button}</button>
+//         </a>`
+//       );
+//     });
+//   }
+
+//   //Populate the list on load
+//   updateList();
+//   $(".next").click(function () {
+//     //Only increase the current page if there are enough results
+//     if (currentPage * pageSize <= totalResults) currentPage++;
+//     updateList();
+//   });
+//   $(".previous").click(function () {
+//     //Only decrease the current page if it is currently greater than 1
+//     if (currentPage > 1) currentPage--;
+//     updateList();
+//   });
+// });
+
+
+// filter
+
