@@ -124,17 +124,18 @@ findVideos();
 // add class remove class
 
 (function () {
-  // let namedListItem = document.querySelectorAll(".named-list__item");
+  let namedListItem = document.querySelectorAll(".button");
   let serviceItem = document.querySelectorAll(".service__item");
+  const worksTitleTab = document.querySelectorAll(".works-title");
 
-  // namedListItem.forEach(function (item) {
-  //   item.addEventListener("click", function () {
-  //     namedListItem.forEach(function (item) {
-  //       item.classList.remove("active");
-  //     });
-  //     item.classList.add("active");
-  //   });
-  // });
+  namedListItem.forEach(function (item) {
+    item.addEventListener("click", function () {
+      namedListItem.forEach(function (item) {
+        item.classList.remove("active");
+      });
+      item.classList.add("active");
+    });
+  });
 
   serviceItem.forEach(function (item) {
     item.addEventListener("click", function () {
@@ -238,55 +239,55 @@ findVideos();
 
 // Isotope data-filter
 
-(function () {
-  try {
-    const elem = document.querySelector(
-      ".works-view__inner:not(.swiper-wrapper)"
-    );
-    const iso = new Isotope(elem, {
-      itemSelector: ".works-view__item, .swiper-slide",
-      filter: ".kitchen, .closet",
-    });
+// (function () {
+//   try {
+//     const elem = document.querySelector(
+//       ".works-view__inner:not(.swiper-wrapper)"
+//     );
+//     const iso = new Isotope(elem, {
+//       itemSelector: ".works-view__item, .swiper-slide",
+//       filter: ".kitchen, .closet",
+//     });
 
-    const controlls = document.querySelectorAll(".named-list__item");
-    const worksTitleItem = document.querySelectorAll(".works-title__item");
-    const activeClass = "active";
+//     const controlls = document.querySelectorAll(".named-list__item");
+//     const worksTitleItem = document.querySelectorAll(".works-title__item");
+//     const activeClass = "active";
 
-    controlls.forEach(function (control) {
-      control.addEventListener("click", function (e) {
-        // e.preventDefault();
+//     controlls.forEach(function (control) {
+//       control.addEventListener("click", function (e) {
+//         // e.preventDefault();
 
-        const filterName = control.getAttribute("data-filter");
+//         const filterName = control.getAttribute("data-filter");
 
-        controlls.forEach(function (link) {
-          link.closest(".named-list__item").classList.remove(activeClass);
-        });
+//         controlls.forEach(function (link) {
+//           link.closest(".named-list__item").classList.remove(activeClass);
+//         });
 
-        control.closest(".named-list__item").classList.add(activeClass);
+//         control.closest(".named-list__item").classList.add(activeClass);
 
-        iso.arrange({
-          filter: `.${filterName}`,
-        });
-      });
-    });
+//         iso.arrange({
+//           filter: `.${filterName}`,
+//         });
+//       });
+//     });
 
-    worksTitleItem.forEach(function (item) {
-      item.addEventListener("click", function () {
-        const filterName = item.getAttribute("data-filter");
+//     worksTitleItem.forEach(function (item) {
+//       item.addEventListener("click", function () {
+//         const filterName = item.getAttribute("data-filter");
 
-        worksTitleItem.forEach(function (title) {
-          title.closest(".works-title__item").classList.remove(activeClass);
-        });
+//         worksTitleItem.forEach(function (title) {
+//           title.closest(".works-title__item").classList.remove(activeClass);
+//         });
 
-        item.closest(".works-title__item").classList.add(activeClass);
+//         item.closest(".works-title__item").classList.add(activeClass);
 
-        iso.arrange({
-          filter: `.${filterName}`,
-        });
-      });
-    });
-  } catch (e) {}
-})();
+//         iso.arrange({
+//           filter: `.${filterName}`,
+//         });
+//       });
+//     });
+//   } catch (e) {}
+// })();
 
 // all-comment
 
@@ -314,15 +315,15 @@ new WOW().init();
 
 // Bootstrap tab
 
-$(document).ready(function () {
-  $(".nav-tabs a").click(function () {
-    $(this).tab("show");
-  });
-  $(".nav-tabs a").on("shown.bs.tab", function (event) {
-    var x = $(event.target).text(); // active tab
-    var y = $(event.relatedTarget).text(); // previous tab
-  });
-});
+// $(document).ready(function () {
+//   $(".nav-tabs a").click(function () {
+//     $(this).tab("show");
+//   });
+//   $(".nav-tabs a").on("shown.bs.tab", function (event) {
+//     var x = $(event.target).text(); // active tab
+//     var y = $(event.relatedTarget).text(); // previous tab
+//   });
+// });
 
 // lightzoom
 
@@ -351,131 +352,40 @@ $(function () {
   });
 });
 
-// Pagination
+// init Isotope
 
-// let animals = [
-//   {
-//     id: 1,
-//     img: "./images/img/work-1.jpg",
-//     button: "Подробнее",
-//   },
-//   {
-//     id: 2,
-//     img: "./images/img/work-2.jpg",
-//     button: "Подробнее",
-//   },
-//   {
-//     id: 3,
-//     img: "./images/img/work-3.jpg",
-//     button: "Подробнее",
-//   },
-//   {
-//     id: 4,
-//     img: "./images/img/work-4.jpg",
-//     button: "Подробнее",
-//   },
-//   {
-//     id: 5,
-//     img: "./images/img/work-5.jpg",
-//     button: "Подробнее",
-//   },
-//   {
-//     id: 6,
-//     img: "./images/img/work-6.jpg",
-//     button: "Подробнее",
-//   },
-//   {
-//     id: 7,
-//     img: "./images/img/work-4.jpg",
-//     button: "Подробнее",
-//   },
-//   {
-//     id: 8,
-//     img: "./images/img/work-3.jpg",
-//     button: "Подробнее",
-//   },
-//   {
-//     id: 9,
-//     img: "./images/img/work-2.jpg",
-//     button: "Подробнее",
-//   },
-//   {
-//     id: 10,
-//     img: "./images/img/work-2.jpg",
-//     button: "Подробнее",
-//   },
-//   {
-//     id: 11,
-//     img: "./images/img/work-3.jpg",
-//     button: "Подробнее",
-//   },
-//   {
-//     id: 12,
-//     img: "./images/img/work-4.jpg",
-//     button: "Подробнее",
-//   },
-// ];
+(function() {
 
-// var pageSize = 4;
-// var currentPage = 2;
-// var pagedResults = [];
-// var totalResults = animals.length;
+  try {
 
-// $(function () {
-//   function updateList() {
-//     // Grab the required section of results from the animals list
-//     var end = currentPage * pageSize;
-//     var start = end - pageSize;
-//     pagedResults = animals.slice(start, end);
+    let $grid = $('.works-view__inner').isotope({
+      itemSelector: '.works-view__item',
+      layoutMode: 'fitRows',
+    });
+    
+    
+    // bind filter button click
+    $('#filters').on( 'click', 'button', function() {
+      let filterValue = $( this ).attr('data-filter');
+      // use filterFn if matches value
+      // filterValue = filterFns[ filterValue ] || filterValue;
+      $grid.isotope({ filter: filterValue });
+    });
+    
+    $('.works-title').on( 'click', 'span', function() {
+      let filterValue = $( this ).attr('data-filter');
+      // use filterFn if matches value
+      // filterValue = filterFns[ filterValue ] || filterValue;
+      $grid.isotope({ filter: filterValue });
+    });
 
-//     // Empty the list element before repopulation
-//     $("#list").empty();
+  } catch(e) {}
 
-//     // Disable the previous button if we are on the first page
-//     if (currentPage <= 1) {
-//       $(".previous").prop("disabled", true);
-//     }
-
-//     // Enable the previous button if we are not on the first page
-//     else {
-//       $(".previous").prop("disabled", false);
-//     }
-
-//     // Disable the next button if we are on the last page
-//     if (currentPage * pageSize >= totalResults) {
-//       $(".next").prop("disabled", true);
-//     }
-
-//     // Enable the next button if we are not on the last page
-//     else {
-//       $(".next").prop("disabled", false);
-//     }
-
-//     //Loop through the pages results and add them to the list
-//     $.each(pagedResults, function (index, obj) {
-//       $("#list").append(
-//         `<a href='./our-works-child.html' class="works-view__item kitchen bathroom modern">
-//           <img src="${obj.img}">
-//           <button class="btn">${obj.button}</button>
-//         </a>`
-//       );
-//     });
-//   }
-
-//   //Populate the list on load
-//   updateList();
-//   $(".next").click(function () {
-//     //Only increase the current page if there are enough results
-//     if (currentPage * pageSize <= totalResults) currentPage++;
-//     updateList();
-//   });
-//   $(".previous").click(function () {
-//     //Only decrease the current page if it is currently greater than 1
-//     if (currentPage > 1) currentPage--;
-//     updateList();
-//   });
-// });
+})();
 
 
-// filter
+
+
+
+
 

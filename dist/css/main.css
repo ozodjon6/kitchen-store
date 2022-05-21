@@ -2102,7 +2102,7 @@ template {
     background-color: transparent
   }
 }
-.works-title .works-title__item {
+.works-title span {
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
@@ -2111,16 +2111,16 @@ template {
   -o-transition: all .3s;
   transition: all .3s
 }
-.works-title .works-title__item:hover {
+.works-title span:hover {
   text-shadow: 0 0 1px #000;
   cursor: pointer
 }
 @media (max-width:768px) {
-  .works-title .works-title__item {
+  .works-title span {
     margin-right: 2rem
   }
 }
-.works-title .works-title__item.active {
+.works-title span.active {
   text-shadow: 0 0 1px #000
 }
 .named-list {
@@ -2183,6 +2183,64 @@ template {
   font-size: 16px;
   line-height: 20px;
   margin-top: 1rem
+}
+.named-list .button {
+  width: 15rem;
+  height: 10rem;
+  text-align: center;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  position: relative
+}
+.named-list .button a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%)
+}
+.named-list .button .img-hover {
+  display: none
+}
+.named-list .button:hover {
+  cursor: pointer;
+  background: #fbb80d
+}
+.named-list .button:hover .no-hover {
+  display: none
+}
+.named-list .button:hover .img-hover {
+  display: block;
+  margin: 0 auto
+}
+.named-list .button:hover p {
+  color: #000
+}
+.named-list .button p {
+  color: #7e7e7e;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 1rem
+}
+.named-list .button.active {
+  background: #fbb80d
+}
+.named-list .button.active p {
+  color: #000
+}
+.named-list .button.active .no-hover {
+  display: none
+}
+.named-list .button.active .img-hover {
+  display: block;
+  margin: 0 auto
 }
 .named-list .named-list__item.active {
   background: #fbb80d
@@ -3055,5 +3113,16 @@ template {
 #magnify img {
   width: 100%;
   height: 100%
+}
+.pagination .controls a {
+  padding: 3px;
+  border: 1px solid gray;
+  margin: 2px;
+  color: #000;
+  text-decoration: none
+}
+.pagination .page.active {
+  background: #00008b;
+  color: #fff!important
 }
 /*# sourceMappingURL=app/css/main.css.map */
